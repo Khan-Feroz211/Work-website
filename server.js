@@ -40,6 +40,14 @@ const contactLimiter = rateLimit({
   legacyHeaders: false,
 });
 
+// General rate limiter for all other routes
+const generalLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 200,
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
 // Contact form endpoint
 app.post('/api/contact', contactLimiter, async (req, res) => {
   const { name, email, subject, message } = req.body;
@@ -97,7 +105,7 @@ app.post('/api/contact', contactLimiter, async (req, res) => {
 });
 
 // Fallback – serve index.html for any unmatched route
-app.get('*', (req, res) => {
+app.get('*', generalLimiter, (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 

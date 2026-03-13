@@ -96,9 +96,9 @@ revealEls.forEach(el => el.classList.add('reveal'));
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
-    entries.forEach((entry, i) => {
+    entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        setTimeout(() => entry.target.classList.add('visible'), index * 80);
         revealObserver.unobserve(entry.target);
       }
     });
@@ -125,6 +125,14 @@ skillBars.forEach(bar => barObserver.observe(bar));
 /* ===== FOOTER YEAR ===== */
 const yearEl = document.getElementById('footer-year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+/* ===== YEARS OF EXPERIENCE ===== */
+const yearsEl = document.getElementById('years-exp');
+if (yearsEl) {
+  const START_YEAR = 2023; // year professional work began
+  const years = new Date().getFullYear() - START_YEAR;
+  yearsEl.textContent = `${years}+`;
+}
 
 /* ===== CONTACT FORM ===== */
 const contactForm = document.getElementById('contact-form');
