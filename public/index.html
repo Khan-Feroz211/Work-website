@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional portfolio and work website – showcasing skills, projects, and services." />
+  <title>Work-website | Professional Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#home" class="nav__logo">Khan<span>.</span></a>
+      <ul class="nav__list" id="nav-list">
+        <li><a href="#home"   class="nav__link active">Home</a></li>
+        <li><a href="#about"  class="nav__link">About</a></li>
+        <li><a href="#skills" class="nav__link">Skills</a></li>
+        <li><a href="#work"   class="nav__link">Work</a></li>
+        <li><a href="#contact" class="nav__link nav__link--cta">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero section" id="home">
+    <div class="hero__bg"></div>
+    <div class="container hero__content">
+      <p class="hero__greeting">Hello, I&rsquo;m</p>
+      <h1 class="hero__title">Feroz Khan</h1>
+      <h2 class="hero__subtitle typing" id="typed-text">Full-Stack Developer</h2>
+      <p class="hero__description">
+        I build clean, fast, and user-friendly web applications that help
+        businesses grow and stand out online.
+      </p>
+      <div class="hero__actions">
+        <a href="#work" class="btn btn--primary">View My Work</a>
+        <a href="#contact" class="btn btn--outline">Hire Me</a>
+      </div>
+      <div class="hero__socials">
+        <a href="https://github.com/Khan-Feroz211" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.021C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+        <a href="mailto:www.ferozkhan@outlook.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
+    </div>
+    <a href="#about" class="hero__scroll" aria-label="Scroll down">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">Who I Am</span>
+        <h2 class="section__title">About Me</h2>
+      </div>
+      <div class="about__grid">
+        <div class="about__image-wrap">
+          <div class="about__image-placeholder">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="35" r="22" fill="var(--clr-primary-400)"/>
+              <ellipse cx="50" cy="85" rx="35" ry="20" fill="var(--clr-primary-400)"/>
+            </svg>
+          </div>
+          <div class="about__badge">
+            <span class="about__badge-num">3+</span>
+            <span class="about__badge-text">Years<br>Experience</span>
+          </div>
+        </div>
+        <div class="about__body">
+          <h3 class="about__name">Feroz Khan</h3>
+          <p class="about__role">Full-Stack Developer &amp; Problem Solver</p>
+          <p class="about__text">
+            I&rsquo;m a passionate developer who loves turning ideas into real, impactful
+            digital products. With expertise spanning front-end design to back-end
+            architecture, I deliver complete, scalable web solutions.
+          </p>
+          <p class="about__text">
+            When I&rsquo;m not coding, I&rsquo;m exploring new technologies, contributing to
+            open-source projects, and continuously sharpening my craft.
+          </p>
+          <ul class="about__info">
+            <li><span>Name:</span> Feroz Khan</li>
+            <li><span>Email:</span> <a href="mailto:www.ferozkhan@outlook.com">www.ferozkhan@outlook.com</a></li>
+            <li><span>GitHub:</span> <a href="https://github.com/Khan-Feroz211" target="_blank" rel="noopener noreferrer">Khan-Feroz211</a></li>
+            <li><span>Available:</span> Open to opportunities</li>
+          </ul>
+          <a href="#contact" class="btn btn--primary">Get In Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="skills section section--alt" id="skills">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">What I Know</span>
+        <h2 class="section__title">Skills &amp; Technologies</h2>
+      </div>
+      <div class="skills__grid">
+
+        <div class="skill-card">
+          <div class="skill-card__icon skill-card__icon--blue">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg>
+          </div>
+          <h3>HTML &amp; CSS</h3>
+          <p>Semantic markup, responsive design, CSS Grid, Flexbox, and modern CSS features.</p>
+          <div class="skill-bar"><div class="skill-bar__fill" style="--pct: 92%"></div></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card__icon skill-card__icon--yellow">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg>
+          </div>
+          <h3>JavaScript</h3>
+          <p>ES6+, async/await, DOM manipulation, REST APIs, and modern tooling.</p>
+          <div class="skill-bar"><div class="skill-bar__fill" style="--pct: 88%"></div></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card__icon skill-card__icon--green">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.998 24c-.321 0-.641-.084-.922-.249l-2.935-1.737c-.438-.245-.224-.332-.08-.383.585-.203.703-.25 1.328-.604.065-.037.151-.023.218.017l2.256 1.339c.082.045.198.045.275 0l8.795-5.076c.082-.047.134-.141.134-.238V6.921c0-.099-.053-.192-.137-.242l-8.791-5.072c-.081-.047-.189-.047-.271 0L3.075 6.68c-.085.05-.139.145-.139.243v10.148c0 .097.055.19.139.235l2.409 1.392c1.307.654 2.108-.116 2.108-.891V7.787c0-.142.114-.253.256-.253h1.115c.139 0 .255.111.255.253v10.021c0 1.745-.95 2.745-2.604 2.745-.508 0-.909 0-2.026-.551L2.28 18.675c-.57-.329-.922-.943-.922-1.604V6.921c0-.659.352-1.274.922-1.603l8.795-5.082c.557-.315 1.296-.315 1.848 0l8.794 5.082c.57.329.924.944.924 1.603v10.15c0 .659-.354 1.273-.924 1.604l-8.794 5.078c-.282.164-.6.247-.925.247zm2.718-6.996c-3.855 0-4.661-1.77-4.661-3.253 0-.142.113-.253.255-.253h1.136c.127 0 .232.091.252.216.172 1.161.685 1.748 3.018 1.748 1.858 0 2.649-.421 2.649-1.408 0-.568-.225-.99-3.116-1.274-2.416-.238-3.911-.772-3.911-2.705 0-1.781 1.502-2.842 4.019-2.842 2.825 0 4.224.981 4.399 3.086a.256.256 0 01-.064.196.255.255 0 01-.188.082h-1.139a.253.253 0 01-.248-.206c-.275-1.22-.943-1.612-2.76-1.612-2.033 0-2.27.707-2.27 1.238 0 .643.28.83 3.02 1.192 2.711.36 4.002.87 4.002 2.775 0 1.924-1.604 3.02-4.397 3.02z"/></svg>
+          </div>
+          <h3>Node.js</h3>
+          <p>Server-side JavaScript, Express, RESTful APIs, middleware, and npm ecosystem.</p>
+          <div class="skill-bar"><div class="skill-bar__fill" style="--pct: 85%"></div></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card__icon skill-card__icon--cyan">
+            <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="2.4"/><path d="M12 5.52c3.35 0 6.33.68 8.33 1.74C22.33 8.3 23 9.2 23 10s-.67 1.7-2.67 2.74C18.33 13.8 15.35 14.48 12 14.48s-6.33-.68-8.33-1.74C1.67 11.7 1 10.8 1 10s.67-1.7 2.67-2.74C5.67 6.2 8.65 5.52 12 5.52m0-1.52C5.37 4 0 6.69 0 10s5.37 6 12 6 12-2.69 12-6-5.37-6-12-6z"/><path d="M6.27 10c0 3.31 2.57 7.5 5.73 7.5s5.73-4.19 5.73-7.5S15.16 2.5 12 2.5 6.27 6.69 6.27 10zm1.5 0c0-2.55 1.95-6 4.23-6s4.23 3.45 4.23 6-1.95 6-4.23 6-4.23-3.45-4.23-6z"/></svg>
+          </div>
+          <h3>React</h3>
+          <p>Component-based UIs, hooks, state management, and single-page applications.</p>
+          <div class="skill-bar"><div class="skill-bar__fill" style="--pct: 80%"></div></div>
+        </div>
+
+
+        <div class="skill-card">
+          <div class="skill-card__icon skill-card__icon--purple">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0111.91 24h.481c.114-1.032.284-2.056.51-3.07.417-.296.604-.463.85-.693a11.342 11.342 0 003.639-8.464c.01-.814-.154-1.86-.197-2.218zm-5.336 8.195s0-8.291.275-8.29c.213 0 .49 10.695.49 10.695-.381-.045-.765-1.76-.765-2.405z"/></svg>
+          </div>
+          <h3>Databases</h3>
+          <p>MongoDB, PostgreSQL, MySQL – schema design, queries, and ORM/ODM tools.</p>
+          <div class="skill-bar"><div class="skill-bar__fill" style="--pct: 78%"></div></div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card__icon skill-card__icon--orange">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2.6 10.59L8.38 4.8l1.69 1.7c-.24.85.15 1.78.93 2.23v5.54c-.6.34-1 .99-1 1.73a2 2 0 002 2 2 2 0 002-2c0-.74-.4-1.39-1-1.73V9.41l2.07 2.09c-.07.15-.07.32-.07.5a2 2 0 002 2 2 2 0 002-2 2 2 0 00-2-2c-.18 0-.35 0-.5.07L13.93 7.5a2 2 0 00-1.93-2.57 2 2 0 00-1.74 1.02L8.55 4.22 10 2.77c.78-.78.78-2.05 0-2.83a2 2 0 00-2.83 0L.77 6.34a2 2 0 000 2.83 2 2 0 002.83 0l-.01-.01.99-.57z"/></svg>
+          </div>
+          <h3>Git &amp; DevOps</h3>
+          <p>Version control, CI/CD pipelines, Docker basics, and cloud deployment (Heroku, Vercel, Railway).</p>
+          <div class="skill-bar"><div class="skill-bar__fill" style="--pct: 82%"></div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WORK / PORTFOLIO ===== -->
+  <section class="work section" id="work">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">My Projects</span>
+        <h2 class="section__title">Featured Work</h2>
+      </div>
+      <div class="work__grid">
+
+        <article class="work-card">
+          <div class="work-card__img work-card__img--1">
+            <div class="work-card__overlay">
+              <a href="https://github.com/Khan-Feroz211/Work-website" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--white">View Project</a>
+            </div>
+          </div>
+          <div class="work-card__body">
+            <div class="work-card__tags">
+              <span>Node.js</span><span>Express</span><span>HTML/CSS</span>
+            </div>
+            <h3 class="work-card__title">Work Website</h3>
+            <p class="work-card__desc">A professional portfolio site with contact form, responsive design, and server-side rendering.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-card__img work-card__img--2">
+            <div class="work-card__overlay">
+              <a href="https://github.com/Khan-Feroz211" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--white">View on GitHub</a>
+            </div>
+          </div>
+          <div class="work-card__body">
+            <div class="work-card__tags">
+              <span>React</span><span>REST API</span><span>MongoDB</span>
+            </div>
+            <h3 class="work-card__title">Full-Stack App</h3>
+            <p class="work-card__desc">A full-stack web application with authentication, CRUD operations, and a clean REST API backend.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-card__img work-card__img--3">
+            <div class="work-card__overlay">
+              <a href="https://github.com/Khan-Feroz211" target="_blank" rel="noopener noreferrer" class="btn btn--sm btn--white">View on GitHub</a>
+            </div>
+          </div>
+          <div class="work-card__body">
+            <div class="work-card__tags">
+              <span>JavaScript</span><span>CSS3</span><span>API</span>
+            </div>
+            <h3 class="work-card__title">Interactive Dashboard</h3>
+            <p class="work-card__desc">A data-driven dashboard with real-time updates, charts, and an intuitive user interface.</p>
+          </div>
+        </article>
+
+      </div>
+      <div class="work__more">
+        <a href="https://github.com/Khan-Feroz211" target="_blank" rel="noopener noreferrer" class="btn btn--outline">
+          See All Projects on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact section section--alt" id="contact">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">Let&rsquo;s Talk</span>
+        <h2 class="section__title">Get In Touch</h2>
+      </div>
+      <div class="contact__grid">
+        <div class="contact__info">
+          <p class="contact__intro">
+            Have a project in mind or want to discuss an opportunity? I&rsquo;d love to
+            hear from you. Fill out the form or reach out directly.
+          </p>
+          <ul class="contact__details">
+            <li>
+              <div class="contact__icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </div>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:www.ferozkhan@outlook.com">www.ferozkhan@outlook.com</a>
+              </div>
+            </li>
+            <li>
+              <div class="contact__icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.021C22 6.484 17.522 2 12 2z"/></svg>
+              </div>
+              <div>
+                <strong>GitHub</strong>
+                <a href="https://github.com/Khan-Feroz211" target="_blank" rel="noopener noreferrer">github.com/Khan-Feroz211</a>
+              </div>
+            </li>
+            <li>
+              <div class="contact__icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path fill="white" d="M12 6a6 6 0 100 12A6 6 0 0012 6zm0 2a4 4 0 110 8 4 4 0 010-8z"/></svg>
+              </div>
+              <div>
+                <strong>Status</strong>
+                <span class="status-badge">Available for work</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <form class="contact__form" id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required maxlength="100" />
+            <span class="form-error" id="name-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required maxlength="200" />
+            <span class="form-error" id="email-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required maxlength="200" />
+            <span class="form-error" id="subject-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required maxlength="2000"></textarea>
+            <span class="form-error" id="message-error"></span>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full" id="submit-btn">
+            <span id="submit-text">Send Message</span>
+            <span id="submit-loading" class="hidden">Sending…</span>
+          </button>
+          <div class="form-feedback hidden" id="form-feedback"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#home" class="footer__logo">Khan<span>.</span></a>
+      <p class="footer__copy">&copy; <span id="footer-year"></span> Feroz Khan. All rights reserved.</p>
+      <ul class="footer__socials">
+        <li><a href="https://github.com/Khan-Feroz211" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.021C22 6.484 17.522 2 12 2z"/></svg>
+        </a></li>
+        <li><a href="mailto:www.ferozkhan@outlook.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
