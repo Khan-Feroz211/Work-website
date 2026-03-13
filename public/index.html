@@ -1,0 +1,860 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADRAK Digital - Your Business. Automated. Growing.</title>
+    <meta
+      name="description"
+      content="ADRAK Digital builds websites, content systems, paid ads and AI automation for growth-focused businesses."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --gold: #bf9a5a;
+        --gold-lite: #d4b478;
+        --bg: #060606;
+        --bg-soft: #0d0d0d;
+        --bg-card: #121212;
+        --border: rgba(191, 154, 90, 0.2);
+        --text: #eddfc8;
+        --muted: #958d7d;
+        --dim: #5f5a53;
+        --radius: 18px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        background: radial-gradient(circle at 18% 8%, rgba(191, 154, 90, 0.12), transparent 30%), var(--bg);
+        color: var(--text);
+        font-family: "Outfit", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .layout {
+        width: min(1400px, 100% - 2rem);
+        margin: 0 auto;
+        display: block;
+      }
+
+      .main {
+        min-width: 0;
+      }
+
+      .nav {
+        position: sticky;
+        top: 10px;
+        z-index: 50;
+        margin: 10px 0 26px;
+        background: rgba(8, 8, 8, 0.86);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 100px;
+        padding: 10px 12px 10px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        backdrop-filter: blur(16px);
+      }
+
+      .brand {
+        text-decoration: none;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.2rem;
+        color: var(--gold);
+        font-weight: 700;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 0.3rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--muted);
+        padding: 0.46rem 0.82rem;
+        border-radius: 999px;
+        font-size: 0.84rem;
+      }
+
+      .nav-links a:hover {
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--text);
+      }
+
+      .nav-cta {
+        text-decoration: none;
+        font-weight: 600;
+        background: var(--gold);
+        color: #0a0a0a;
+        border-radius: 999px;
+        padding: 0.6rem 1rem;
+        font-size: 0.82rem;
+      }
+
+      .hero {
+        min-height: 72vh;
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 1rem;
+        align-items: center;
+        padding: 2rem 0 1.2rem;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        border: 1px solid var(--border);
+        color: var(--gold);
+        border-radius: 100px;
+        padding: 0.4rem 0.72rem;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.09em;
+      }
+
+      .h-title {
+        margin: 0.9rem 0 0;
+        font-family: "Cormorant Garamond", serif;
+        line-height: 0.96;
+        letter-spacing: -0.02em;
+        font-size: clamp(2.8rem, 8vw, 5.6rem);
+      }
+
+      .h-title em {
+        color: var(--gold);
+        font-style: italic;
+      }
+
+      .sub {
+        max-width: 560px;
+        color: var(--muted);
+        line-height: 1.7;
+        margin-top: 1rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+        margin-top: 1.2rem;
+      }
+
+      .btn {
+        text-decoration: none;
+        border-radius: 999px;
+        padding: 0.75rem 1.1rem;
+        font-size: 0.86rem;
+        font-weight: 600;
+      }
+
+      .btn-main {
+        background: var(--gold);
+        color: #050505;
+      }
+
+      .btn-ghost {
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        color: var(--text);
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.6rem;
+        margin-top: 1.6rem;
+      }
+
+      .stat {
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        padding: 0.75rem;
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .stat b {
+        display: block;
+        color: var(--gold);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.5rem;
+      }
+
+      .stat span {
+        font-size: 0.72rem;
+        color: var(--dim);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .mock {
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        background: linear-gradient(160deg, #11100d, #0a0a0a);
+        padding: 0.8rem;
+        box-shadow: 0 40px 100px rgba(0, 0, 0, 0.55);
+      }
+
+      .mock .bar {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.4rem;
+      }
+
+      .dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+      }
+
+      .dot.red {
+        background: #ff5f57;
+      }
+
+      .dot.yellow {
+        background: #ffbd2e;
+      }
+
+      .dot.green {
+        background: #27c93f;
+      }
+
+      .url {
+        margin-left: auto;
+        font-size: 0.66rem;
+        color: var(--dim);
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .mock-body {
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: #0b0b0b;
+        padding: 1rem;
+      }
+
+      .mini {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.82rem;
+        line-height: 1.55;
+      }
+
+      .ticker {
+        overflow: hidden;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        margin: 1.2rem 0 0;
+      }
+
+      .ticker-track {
+        display: flex;
+        width: max-content;
+        animation: slide 28s linear infinite;
+      }
+
+      .ticker-track span {
+        color: var(--dim);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        padding: 0.75rem 1.3rem;
+        white-space: nowrap;
+      }
+
+      .sec {
+        padding: 4.4rem 0 1.1rem;
+      }
+
+      .sec-eye {
+        margin: 0;
+        color: var(--gold);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      .sec h2 {
+        margin: 0.4rem 0 0;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2rem, 4vw, 3.6rem);
+        line-height: 1.02;
+      }
+
+      .sec h2 em {
+        color: var(--gold);
+      }
+
+      .offers {
+        margin-top: 1.6rem;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.72rem;
+      }
+
+      .offer {
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        padding: 0.9rem;
+        background: var(--bg-card);
+      }
+
+      .offer .tag {
+        display: inline-block;
+        color: var(--gold);
+        font-size: 0.66rem;
+        text-transform: uppercase;
+        letter-spacing: 0.11em;
+      }
+
+      .offer h3 {
+        margin: 0.5rem 0 0;
+        font-size: 1rem;
+      }
+
+      .offer p {
+        margin: 0.5rem 0;
+        color: var(--muted);
+        font-size: 0.86rem;
+        line-height: 1.5;
+      }
+
+      .offer .price {
+        color: var(--gold-lite);
+        font-weight: 600;
+      }
+
+      .discount {
+        margin-top: 0.8rem;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 0.8rem;
+        color: #d8cbb7;
+        background: linear-gradient(120deg, rgba(191, 154, 90, 0.16), rgba(191, 154, 90, 0.02));
+      }
+
+      .team-grid,
+      .journey,
+      .testimonials {
+        margin-top: 1.4rem;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.72rem;
+      }
+
+      .card {
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        padding: 1rem;
+        background: var(--bg-card);
+      }
+
+      .card h3 {
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      .card p {
+        margin: 0.5rem 0 0;
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.58;
+      }
+
+      .cta-band {
+        margin: 2.4rem 0;
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 1.4rem;
+        background: linear-gradient(130deg, rgba(191, 154, 90, 0.13), rgba(10, 10, 10, 0.4));
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .cta-band p {
+        margin: 0;
+        color: #d4c9b8;
+      }
+
+      footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 1.1rem 0 2.2rem;
+        color: var(--dim);
+        font-size: 0.84rem;
+      }
+
+      .sidebar {
+        position: fixed;
+        top: 14px;
+        right: 14px;
+        width: min(370px, calc(100vw - 20px));
+        height: calc(100vh - 28px);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        background: #0a0a0a;
+        display: grid;
+        grid-template-rows: auto auto 1fr auto;
+        padding: 0.85rem;
+        z-index: 200;
+        transform: translateX(calc(100% + 24px));
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.28s ease, opacity 0.28s ease;
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .s-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+      }
+
+      .s-head strong {
+        font-size: 0.96rem;
+      }
+
+      .close-chat {
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 8px;
+        background: transparent;
+        color: var(--text);
+        width: 28px;
+        height: 28px;
+        line-height: 1;
+        cursor: pointer;
+      }
+
+      .status {
+        color: #6ce89e;
+        font-size: 0.72rem;
+      }
+
+      .quick {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-top: 0.55rem;
+      }
+
+      .chip {
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 999px;
+        padding: 0.28rem 0.55rem;
+        color: #ccc1b2;
+        font-size: 0.68rem;
+        cursor: pointer;
+      }
+
+      .chat-box {
+        margin-top: 0.6rem;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 12px;
+        padding: 0.6rem;
+        overflow: auto;
+        background: #0e0e0e;
+      }
+
+      .bubble {
+        max-width: 88%;
+        width: fit-content;
+        border-radius: 12px;
+        margin: 0.5rem 0;
+        padding: 0.5rem 0.64rem;
+        line-height: 1.5;
+        font-size: 0.84rem;
+      }
+
+      .bubble.bot {
+        background: rgba(191, 154, 90, 0.18);
+      }
+
+      .bubble.me {
+        background: #1c1b1b;
+        margin-left: auto;
+      }
+
+      .composer {
+        margin-top: 0.65rem;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 0.5rem;
+      }
+
+      .composer input {
+        width: 100%;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: #0e0e0e;
+        color: var(--text);
+        padding: 0.62rem;
+        font-family: inherit;
+        font-size: 0.86rem;
+      }
+
+      .composer button {
+        border: 0;
+        border-radius: 10px;
+        background: var(--gold);
+        color: #0b0b0b;
+        padding: 0.62rem 0.78rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .chat-toggle {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        z-index: 210;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: linear-gradient(120deg, rgba(191, 154, 90, 0.95), rgba(191, 154, 90, 0.78));
+        color: #090909;
+        font-size: 0.84rem;
+        font-weight: 700;
+        padding: 0.72rem 1rem;
+        cursor: pointer;
+        box-shadow: 0 16px 34px rgba(0, 0, 0, 0.45);
+      }
+
+      @keyframes slide {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      @media (max-width: 1140px) {
+        .sidebar {
+          width: min(370px, calc(100vw - 14px));
+          right: 7px;
+          top: 7px;
+          height: calc(100vh - 14px);
+        }
+      }
+
+      @media (max-width: 960px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .offers,
+        .team-grid,
+        .journey,
+        .testimonials {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .nav-links {
+          display: none;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .offers,
+        .team-grid,
+        .journey,
+        .testimonials,
+        .stats {
+          grid-template-columns: 1fr;
+        }
+
+        .cta-band {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="layout">
+      <main class="main">
+        <nav class="nav">
+          <a class="brand" href="#top">ADRAK Digital</a>
+          <div class="nav-links">
+            <a href="#offers">Offers</a>
+            <a href="#team">Team</a>
+            <a href="#journey">Journey</a>
+            <a href="#ai">AI</a>
+            <a href="#testimonials">Proof</a>
+          </div>
+          <a class="nav-cta" href="https://wa.me/923339962158" target="_blank" rel="noreferrer">Book Call</a>
+        </nav>
+
+        <section class="hero" id="top">
+          <div>
+            <span class="pill">Islamabad Growth Agency</span>
+            <h1 class="h-title">Your Business. <em>Automated.</em> Growing.</h1>
+            <p class="sub">
+              We combine website strategy, content systems, paid ads and AI automation into one full-stack growth engine,
+              so your brand can generate demand and close better leads every month.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-main" href="https://wa.me/923339962158" target="_blank" rel="noreferrer">Start On WhatsApp</a>
+              <a class="btn btn-ghost" href="https://instagram.com/adrakdigital" target="_blank" rel="noreferrer">See Instagram</a>
+            </div>
+            <div class="stats">
+              <div class="stat"><b>24/7</b><span>Lead handling</span></div>
+              <div class="stat"><b>3x</b><span>Weekly content cadence</span></div>
+              <div class="stat"><b>50%</b><span>Founding client discount</span></div>
+            </div>
+          </div>
+
+          <div class="mock">
+            <div class="bar">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="url">https://adrak.digital</span>
+            </div>
+            <div class="mock-body">
+              <h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem">Demand + Systems</h3>
+              <p class="mini">
+                Designed for founders who want one team that handles strategy, execution, and AI-enabled conversion instead of juggling vendors.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="ticker" aria-hidden="true">
+          <div class="ticker-track">
+            <span>Web Design</span><span>Meta Ads</span><span>AI Bot</span><span>Brand Strategy</span><span>Content Systems</span><span>Lead Funnels</span>
+            <span>Web Design</span><span>Meta Ads</span><span>AI Bot</span><span>Brand Strategy</span><span>Content Systems</span><span>Lead Funnels</span>
+          </div>
+        </section>
+
+        <section class="sec" id="offers">
+          <p class="sec-eye">What We Offer</p>
+          <h2>Not services. <em>Outcomes.</em></h2>
+          <div id="offersGrid" class="offers"></div>
+          <div id="discount" class="discount">Loading offer data...</div>
+        </section>
+
+        <section class="sec" id="team">
+          <p class="sec-eye">Team ADRAK</p>
+          <h2>People behind <em>your growth.</em></h2>
+          <div class="team-grid">
+            <article class="card"><h3>Daniyal Ahmad Khan</h3><p>Founder. Leads strategy, positioning and conversion systems for high-intent acquisition.</p></article>
+            <article class="card"><h3>Creative + Content Unit</h3><p>Reels, short-form scripts, creatives and social-first production designed for retention.</p></article>
+            <article class="card"><h3>Paid Growth + Analytics</h3><p>Meta campaign operations, tracking setup, optimization loops and ROI reporting.</p></article>
+          </div>
+        </section>
+
+        <section class="sec" id="journey">
+          <p class="sec-eye">Client Journey</p>
+          <h2>How we move from <em>chaos to scale.</em></h2>
+          <div class="journey">
+            <article class="card"><h3>Step 1 - Audit</h3><p>We analyze your current funnel, messaging, content and ad structure to map revenue leaks.</p></article>
+            <article class="card"><h3>Step 2 - Build</h3><p>Website blocks, content calendar, ads framework and AI bot are deployed in one system.</p></article>
+            <article class="card"><h3>Step 3 - Iterate</h3><p>Weekly optimization based on content performance, lead quality and conversion rate.</p></article>
+          </div>
+        </section>
+
+        <section class="sec" id="ai">
+          <p class="sec-eye">AI Layer</p>
+          <h2>Your leads answered in <em>real time.</em></h2>
+          <div class="team-grid">
+            <article class="card"><h3>24/7 Instant Replies</h3><p>AI assistant responds to FAQs, pricing intent and booking flow without delay.</p></article>
+            <article class="card"><h3>Sales-aware Conversations</h3><p>Bot follows ADRAK's consultation-first approach while handling language preference naturally.</p></article>
+            <article class="card"><h3>Groq Powered</h3><p>Fast inference through your Groq key and model pipeline, connected to your backend routes.</p></article>
+          </div>
+        </section>
+
+        <section class="sec" id="testimonials">
+          <p class="sec-eye">Proof</p>
+          <h2>Built for serious <em>operators.</em></h2>
+          <div class="testimonials">
+            <article class="card"><h3>Service Brand - Islamabad</h3><p>"Lead quality improved in under 30 days once pages and ads were aligned."</p></article>
+            <article class="card"><h3>Commerce Startup</h3><p>"Their content + performance setup made us predictable with weekly inbound."</p></article>
+            <article class="card"><h3>Coach Business</h3><p>"The AI bot handled DMs faster than our team and reduced drop-off massively."</p></article>
+          </div>
+        </section>
+
+        <section class="cta-band">
+          <p>Want ADRAK to audit your business and recommend the best package?</p>
+          <a class="btn btn-main" href="https://wa.me/923339962158" target="_blank" rel="noreferrer">Get Free Strategy Call</a>
+        </section>
+
+        <footer>
+          ADRAK Digital - Islamabad, Pakistan | Founder: Daniyal Ahmad Khan (@preneurbhaya)
+        </footer>
+      </main>
+
+      <aside id="chatSidebar" class="sidebar" aria-label="AI Chatbot Sidebar">
+        <div class="s-head">
+          <strong>Aria - AI Assistant</strong>
+          <div style="display: flex; gap: 0.4rem; align-items: center">
+            <span id="status" class="status">Online</span>
+            <button id="closeChat" class="close-chat" type="button" aria-label="Close chat">x</button>
+          </div>
+        </div>
+        <div class="quick">
+          <button class="chip" type="button" data-q="Which package is best for a new business?">Best package?</button>
+          <button class="chip" type="button" data-q="I need website + ads. What do you suggest?">Website + ads</button>
+          <button class="chip" type="button" data-q="What is the discount right now?">Current discount</button>
+        </div>
+        <div id="messages" class="chat-box"></div>
+        <form id="chatForm" class="composer">
+          <input id="chatInput" name="message" placeholder="Ask about offers, pricing, AI bot..." required />
+          <button id="sendBtn" type="submit">Send</button>
+        </form>
+      </aside>
+
+      <button id="chatToggle" class="chat-toggle" type="button" aria-expanded="false" aria-controls="chatSidebar">
+        Open AI Assistant
+      </button>
+    </div>
+
+    <script>
+      const offersGrid = document.getElementById("offersGrid");
+      const discount = document.getElementById("discount");
+      const messages = document.getElementById("messages");
+      const statusEl = document.getElementById("status");
+      const chatForm = document.getElementById("chatForm");
+      const chatInput = document.getElementById("chatInput");
+      const sendBtn = document.getElementById("sendBtn");
+      const chips = document.querySelectorAll(".chip");
+      const sidebar = document.querySelector(".sidebar");
+      const chatToggle = document.getElementById("chatToggle");
+      const closeChat = document.getElementById("closeChat");
+
+      const state = {
+        open: false,
+        messages: [
+          {
+            role: "assistant",
+            content: "Assalam-o-alaikum. I am Aria from ADRAK. Tell me your niche and current digital challenge, and I will suggest the best growth plan."
+          }
+        ]
+      };
+
+      function addBubble(role, text) {
+        const node = document.createElement("div");
+        node.className = `bubble ${role === "user" ? "me" : "bot"}`;
+        node.textContent = text;
+        messages.appendChild(node);
+        messages.scrollTop = messages.scrollHeight;
+      }
+
+      function setChatOpen(nextOpen) {
+        state.open = nextOpen;
+        sidebar.classList.toggle("open", nextOpen);
+        chatToggle.setAttribute("aria-expanded", String(nextOpen));
+        chatToggle.textContent = nextOpen ? "Close AI Assistant" : "Open AI Assistant";
+        if (nextOpen) {
+          setTimeout(() => chatInput.focus(), 10);
+        }
+      }
+
+      function renderOffers(offers) {
+        offersGrid.innerHTML = offers
+          .map(
+            (offer) => `
+            <article class="offer">
+              <span class="tag">${offer.tag}</span>
+              <h3>${offer.icon} ${offer.name}</h3>
+              <p>${offer.desc}</p>
+              <div class="price">${offer.priceDisplay || "Custom"}</div>
+            </article>
+          `
+          )
+          .join("");
+      }
+
+      async function loadOffers() {
+        const res = await fetch("/api/offers");
+        if (!res.ok) {
+          throw new Error("Could not load offers");
+        }
+        const data = await res.json();
+        renderOffers(data.offers || []);
+        if (data.discount) {
+          discount.innerHTML = `<strong>${data.discount.label}</strong><br>Use code <b>${data.discount.code}</b> for first-month savings.`;
+        } else {
+          discount.textContent = "Founding discount details are available in chat.";
+        }
+      }
+
+      async function askBot(content) {
+        const query = content.trim();
+        if (!query) {
+          return;
+        }
+
+        addBubble("user", query);
+        state.messages.push({ role: "user", content: query });
+        chatInput.value = "";
+        statusEl.textContent = "Typing...";
+        sendBtn.disabled = true;
+
+        try {
+          const res = await fetch("/api/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ messages: state.messages })
+          });
+          const data = await res.json();
+          if (!res.ok) {
+            throw new Error(data.error || "Chat failed");
+          }
+
+          const reply = data.reply || "I could not generate a response right now.";
+          state.messages.push({ role: "assistant", content: reply });
+          addBubble("assistant", reply);
+        } catch (err) {
+          addBubble("assistant", `Error: ${err.message}`);
+        } finally {
+          sendBtn.disabled = false;
+          statusEl.textContent = "Online";
+        }
+      }
+
+      chips.forEach((chip) => {
+        chip.addEventListener("click", () => askBot(chip.dataset.q || ""));
+      });
+
+      chatToggle.addEventListener("click", () => setChatOpen(!state.open));
+      closeChat.addEventListener("click", () => setChatOpen(false));
+      window.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && state.open) {
+          setChatOpen(false);
+        }
+      });
+
+      chatForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        await askBot(chatInput.value);
+      });
+
+      addBubble("assistant", state.messages[0].content);
+      setChatOpen(false);
+      loadOffers().catch(() => {
+        offersGrid.innerHTML = "";
+        discount.textContent = "Could not load offers right now. Use chat for details.";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+{
+	"name": "adrak-digital",
+	"version": "1.0.0",
+	"description": "ADRAK Digital website + AI chatbot",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js",
+		"dev": "node --watch server.js"
+	},
+	"dependencies": {
+		"cors": "^2.8.5",
+		"express": "^4.18.2",
+		"dotenv": "^16.0.0"
+	}
+}
