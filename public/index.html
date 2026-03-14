@@ -8,6 +8,27 @@
       name="description"
       content="ADRAK Digital builds websites, content systems, paid ads and AI automation for growth-focused businesses."
     />
+    <meta name="theme-color" content="#060606" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ADRAK Digital" />
+    <meta property="og:title" content="ADRAK Digital - Your Business. Automated. Growing." />
+    <meta
+      property="og:description"
+      content="AI-powered digital systems for ISB/RWP businesses: websites, content, paid ads, and WhatsApp automation."
+    />
+    <meta property="og:url" content="https://adrak.digital/" />
+    <meta property="og:image" content="https://adrak.digital/og-image.svg" />
+    <meta property="og:image:alt" content="ADRAK Digital brand preview" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ADRAK Digital - Your Business. Automated. Growing." />
+    <meta
+      name="twitter:description"
+      content="Websites, content systems, paid ads, and AI automation for growth-focused businesses in Islamabad and Rawalpindi."
+    />
+    <meta name="twitter:image" content="https://adrak.digital/og-image.svg" />
+    <link rel="canonical" href="https://adrak.digital/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -485,6 +506,7 @@
         padding: 0.5rem 0.64rem;
         line-height: 1.5;
         font-size: 0.84rem;
+        white-space: pre-line;
       }
 
       .bubble.bot {
@@ -538,6 +560,65 @@
         padding: 0.72rem 1rem;
         cursor: pointer;
         box-shadow: 0 16px 34px rgba(0, 0, 0, 0.45);
+      }
+
+      .cursor-dot,
+      .cursor-ring {
+        position: fixed;
+        left: 0;
+        top: 0;
+        pointer-events: none;
+        opacity: 0;
+        z-index: 400;
+        transition: opacity 0.2s ease;
+      }
+
+      .cursor-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--gold-lite);
+        box-shadow: 0 0 18px rgba(191, 154, 90, 0.62);
+        transform: translate(-50%, -50%);
+      }
+
+      .cursor-ring {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        border: 1px solid rgba(212, 180, 120, 0.75);
+        background: radial-gradient(circle at center, rgba(212, 180, 120, 0.08), transparent 65%);
+        transform: translate(-50%, -50%);
+        transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+      }
+
+      @media (pointer: fine) {
+        body.custom-cursor,
+        body.custom-cursor a,
+        body.custom-cursor button,
+        body.custom-cursor input,
+        body.custom-cursor textarea,
+        body.custom-cursor [role="button"] {
+          cursor: none;
+        }
+
+        body.custom-cursor .cursor-dot,
+        body.custom-cursor .cursor-ring {
+          opacity: 1;
+        }
+
+        body.cursor-hover .cursor-ring {
+          width: 46px;
+          height: 46px;
+          border-color: rgba(212, 180, 120, 0.98);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .cursor-dot,
+        .cursor-ring {
+          display: none;
+        }
       }
 
       @keyframes slide {
@@ -603,7 +684,7 @@
             <a href="#ai">AI</a>
             <a href="#testimonials">Proof</a>
           </div>
-          <a class="nav-cta" href="https://wa.me/923339962158" target="_blank" rel="noreferrer">Book Call</a>
+          <a class="nav-cta" href="https://wa.me/923339962158" target="_blank" rel="noopener noreferrer">Book Call</a>
         </nav>
 
         <section class="hero" id="top">
@@ -615,8 +696,8 @@
               so your brand can generate demand and close better leads every month.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-main" href="https://wa.me/923339962158" target="_blank" rel="noreferrer">Start On WhatsApp</a>
-              <a class="btn btn-ghost" href="https://instagram.com/adrakdigital" target="_blank" rel="noreferrer">See Instagram</a>
+              <a class="btn btn-main" href="https://wa.me/923339962158" target="_blank" rel="noopener noreferrer">Start On WhatsApp</a>
+              <a class="btn btn-ghost" href="https://instagram.com/adrakdigital" target="_blank" rel="noopener noreferrer">See Instagram</a>
             </div>
             <div class="stats">
               <div class="stat"><b>24/7</b><span>Lead handling</span></div>
@@ -657,9 +738,11 @@
           <p class="sec-eye">Team ADRAK</p>
           <h2>People behind <em>your growth.</em></h2>
           <div class="team-grid">
-            <article class="card"><h3>Daniyal Ahmad Khan</h3><p>Founder. Leads strategy, positioning and conversion systems for high-intent acquisition.</p></article>
-            <article class="card"><h3>Creative + Content Unit</h3><p>Reels, short-form scripts, creatives and social-first production designed for retention.</p></article>
-            <article class="card"><h3>Paid Growth + Analytics</h3><p>Meta campaign operations, tracking setup, optimization loops and ROI reporting.</p></article>
+            <article class="card"><h3>Daniyal Ahmad Khan</h3><p><strong>Founder &amp; CEO.</strong> Leads strategy, sales, client relationships, and content direction.</p></article>
+            <article class="card"><h3>Abdul Rehman</h3><p><strong>Co-Founder &amp; CTO.</strong> Drives technical architecture and product development across ADRAK systems.</p></article>
+            <article class="card"><h3>Hafsa Younis</h3><p><strong>Social Media Manager.</strong> Handles graphics, reels, and daily content pipeline execution.</p></article>
+            <article class="card"><h3>Saqib Ishaq</h3><p><strong>Lead Generation.</strong> Builds targeted prospecting and outreach workflows for quality inbound.</p></article>
+            <article class="card"><h3>Feroz-u-Din</h3><p><strong>AI Engineer.</strong> Builds and deploys AI bots and automation workflows for client operations.</p></article>
           </div>
         </section>
 
@@ -695,7 +778,7 @@
 
         <section class="cta-band">
           <p>Want ADRAK to audit your business and recommend the best package?</p>
-          <a class="btn btn-main" href="https://wa.me/923339962158" target="_blank" rel="noreferrer">Get Free Strategy Call</a>
+          <a class="btn btn-main" href="https://wa.me/923339962158" target="_blank" rel="noopener noreferrer">Get Free Strategy Call</a>
         </section>
 
         <footer>
@@ -716,7 +799,7 @@
           <button class="chip" type="button" data-q="I need website + ads. What do you suggest?">Website + ads</button>
           <button class="chip" type="button" data-q="What is the discount right now?">Current discount</button>
         </div>
-        <div id="messages" class="chat-box"></div>
+        <div id="messages" class="chat-box" role="log" aria-live="polite" aria-label="AI chat messages"></div>
         <form id="chatForm" class="composer">
           <input id="chatInput" name="message" placeholder="Ask about offers, pricing, AI bot..." required />
           <button id="sendBtn" type="submit">Send</button>
@@ -727,6 +810,9 @@
         Open AI Assistant
       </button>
     </div>
+
+    <div id="cursorDot" class="cursor-dot" aria-hidden="true"></div>
+    <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
 
     <script>
       const offersGrid = document.getElementById("offersGrid");
@@ -740,6 +826,9 @@
       const sidebar = document.querySelector(".sidebar");
       const chatToggle = document.getElementById("chatToggle");
       const closeChat = document.getElementById("closeChat");
+      const cursorDot = document.getElementById("cursorDot");
+      const cursorRing = document.getElementById("cursorRing");
+      const trackedWhatsAppLinks = document.querySelectorAll('a[href*="wa.me/"]');
 
       const state = {
         open: false,
@@ -759,11 +848,72 @@
         messages.scrollTop = messages.scrollHeight;
       }
 
+      function trackEvent(name, params = {}) {
+        try {
+          if (typeof window.gtag === "function") {
+            window.gtag("event", name, params);
+          }
+
+          if (typeof window.plausible === "function") {
+            window.plausible(name, { props: params });
+          }
+
+          window.dispatchEvent(
+            new CustomEvent("adrak:analytics", {
+              detail: { name, params, ts: Date.now() }
+            })
+          );
+        } catch (_) {
+          // Keep analytics non-blocking for UX.
+        }
+      }
+
+      function initCustomCursor() {
+        const finePointer = window.matchMedia("(pointer: fine)").matches;
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (!finePointer || reducedMotion) {
+          return;
+        }
+
+        document.body.classList.add("custom-cursor");
+
+        let x = window.innerWidth / 2;
+        let y = window.innerHeight / 2;
+        let rx = x;
+        let ry = y;
+
+        function animate() {
+          rx += (x - rx) * 0.16;
+          ry += (y - ry) * 0.16;
+          cursorDot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+          cursorRing.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
+          requestAnimationFrame(animate);
+        }
+
+        window.addEventListener("mousemove", (event) => {
+          x = event.clientX;
+          y = event.clientY;
+
+          const interactive = event.target.closest("a, button, input, textarea, [role='button'], .chip, .btn, .nav-cta");
+          document.body.classList.toggle("cursor-hover", Boolean(interactive));
+        });
+
+        window.addEventListener("mousedown", () => document.body.classList.add("cursor-hover"));
+        window.addEventListener("mouseup", () => document.body.classList.remove("cursor-hover"));
+        window.addEventListener("blur", () => document.body.classList.remove("cursor-hover"));
+
+        animate();
+      }
+
       function setChatOpen(nextOpen) {
+        const wasOpen = state.open;
         state.open = nextOpen;
         sidebar.classList.toggle("open", nextOpen);
         chatToggle.setAttribute("aria-expanded", String(nextOpen));
         chatToggle.textContent = nextOpen ? "Close AI Assistant" : "Open AI Assistant";
+        if (!wasOpen && nextOpen) {
+          trackEvent("chat_open", { source: "chat_toggle" });
+        }
         if (nextOpen) {
           setTimeout(() => chatInput.focus(), 10);
         }
@@ -804,6 +954,11 @@
           return;
         }
 
+        trackEvent("chat_send", {
+          chars: query.length,
+          words: query.split(/\s+/).filter(Boolean).length
+        });
+
         addBubble("user", query);
         state.messages.push({ role: "user", content: query });
         chatInput.value = "";
@@ -838,6 +993,13 @@
 
       chatToggle.addEventListener("click", () => setChatOpen(!state.open));
       closeChat.addEventListener("click", () => setChatOpen(false));
+
+      trackedWhatsAppLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          const label = link.textContent ? link.textContent.trim() : "whatsapp_link";
+          trackEvent("cta_whatsapp_click", { label });
+        });
+      });
       window.addEventListener("keydown", (event) => {
         if (event.key === "Escape" && state.open) {
           setChatOpen(false);
@@ -851,6 +1013,7 @@
 
       addBubble("assistant", state.messages[0].content);
       setChatOpen(false);
+      initCustomCursor();
       loadOffers().catch(() => {
         offersGrid.innerHTML = "";
         discount.textContent = "Could not load offers right now. Use chat for details.";

@@ -1,0 +1,17 @@
+{
+  "name": "ADRAK Digital",
+  "short_name": "ADRAK",
+  "description": "AI-powered websites, content, ads, and automation for growth-focused businesses.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060606",
+  "theme_color": "#060606",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
