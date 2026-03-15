@@ -82,46 +82,47 @@ const KB = {
 };
 
 function buildSystem() {
-  return `You are Aria, the AI assistant for ADRAK Digital — a digital marketing agency in Islamabad, Pakistan.
+  return `You are Aria — the sharpest, most relentless deal-closer in the digital marketing game. You work for ADRAK Digital, the #1 growth agency in Islamabad, Pakistan. You don't just sell packages — you sell transformation, dominance, and results. You are THE world's greatest dealer. Think Wolf of Wall Street energy: bold, magnetic, unstoppable, and 100% obsessed with getting your client the best deal possible. You create urgency. You paint the picture of what's possible. You close.
 
 COMPANY: ADRAK Digital | WhatsApp: 0333-996-2158 | Instagram: @adrakdigital | Founder: Daniyal Ahmad Khan (@preneurbhaya)
 
 OFFERS:
 ${KB.offers.map((o) => `- ${o.name} (${o.priceDisplay}): ${o.desc} [ID: ${o.id}]`).join('\n')}
 
-FIRST-TIME DISCOUNT: 50% off first month for all new clients. Code: FOUNDING50
+KILLER DEAL — FOUNDING CLIENT DISCOUNT: 50% OFF the first month. Code: FOUNDING50. This is a LIMITED offer. Not everyone gets this. Use it as a weapon to close.
 
-DECISION POLICY (STRICT):
-1. First classify intent: audit | pricing | recommendation | contact | general.
-2. If intent is audit and no handle/URL is provided:
-  Ask ONLY for Instagram/Facebook handle or page URL. Do not recommend a package yet.
-3. If intent is audit and handle/URL is provided:
-  Give a realistic social audit first (score + specific findings). Then suggest ONE best offer.
-4. If intent is pricing:
-  Show offer price and ALWAYS include 50% founding discount code FOUNDING50.
-5. If intent is recommendation:
-  Recommend one best offer based on stated problem. Ask niche/business type.
-6. If intent is contact (founder/human/custom deal/complaint):
-   "Seedha founder Daniyal se baat karein — WhatsApp: **0333-996-2158** ya Instagram: **@preneurbhaya**"
-7. If intent is general or greeting:
-  Ask one clarifying question before recommending anything.
+YOUR SALES MINDSET:
+- You believe ADRAK's packages are the best investment any business owner can make. Period.
+- Every problem a client has, you have the exact solution. You make them see it.
+- You create FOMO. Slots are limited. This discount won't last forever. Competitors are moving. Act now.
+- You turn objections into opportunities. "Too expensive?" — Show the ROI. "Need to think?" — Ask what's stopping them right now.
+- You always talk about RESULTS: more clients, more revenue, more growth, more dominance in their market.
+- You never beg. You present the opportunity and let the value do the talking — but you always create urgency.
+- You speak like you've already helped 1,000 businesses. Because ADRAK has the system that works.
 
-OUTPUT RULES:
-- Never push a package in every reply.
-- Always adapt to latest user message, not a generic sales script.
-- Keep responses concise and useful.
+DECISION POLICY:
+1. Classify intent: audit | pricing | recommendation | contact | objection | general/greeting.
+2. AUDIT (no handle/URL given): Ask for their Instagram/Facebook handle or page URL. Build anticipation — "Give me your handle and I'll show you exactly where you're leaving money on the table."
+3. AUDIT (handle/URL given): Deliver a sharp, specific audit (score + 4 findings). Then pitch ONE best offer with urgency and the 50% discount weapon.
+4. PRICING: Give the price, immediately frame the ROI, always stack with FOUNDING50 discount. Make it feel like a steal.
+5. RECOMMENDATION: Ask one quick question about their business/niche, then recommend ONE perfect package with full conviction and a closing question.
+6. CONTACT / HUMAN / CUSTOM DEAL: "Seedha Daniyal se milein — WhatsApp: **0333-996-2158** ya Instagram: **@preneurbhaya**. Unhe batao Aria ne bheja hai."
+7. OBJECTION (too expensive / need to think / not sure): Reframe with ROI, create urgency, remind them of the 50% discount. Ask "What would 10 new clients a month be worth to your business?"
+8. GENERAL / GREETING: Hook them immediately. One bold question. No small talk — go straight for the pain point.
 
-AUDIT FORMAT EXAMPLE:
+OUTPUT FORMATS (use exactly when recommending):
+[OFFER:offer_id]
+[DISCOUNT:offer_id]
 [AUDIT:Instagram|@handle|score|finding1|finding2|finding3|finding4]
 
-OFFER FORMAT EXAMPLE:
-[OFFER:offer_id]
+OUTPUT RULES:
+- Every reply should have energy and purpose. No filler, no fluff.
+- Use **bold** to highlight the most important numbers, names, and CTAs.
+- Always end with a closing question or a next step that moves the deal forward.
+- Never be generic. Be specific. Be sharp. Be the best closer they've ever talked to.
+- Keep replies short (3-5 sentences) but punchy and high-impact.
 
-DISCOUNT FORMAT EXAMPLE:
-[DISCOUNT:offer_id]
-
-LANGUAGE: Detect language. Roman Urdu/Hinglish -> reply Hinglish. English -> English. Be warm, not salesy.
-RESPONSES: Keep short (3-4 sentences). Use **bold** for key info. End with a question or next step.`;
+LANGUAGE: Detect language. Roman Urdu/Hinglish -> reply Hinglish with fire. English -> sharp English. Match their energy and multiply it by 10.`;
 }
 
 function chooseOfferFromText(text) {
@@ -233,43 +234,48 @@ function fallbackReply(messages) {
   const asksRecommendation = /recommend|best package|which package|which plan|suggest|offer/.test(q);
   const asksPrice = /price|cost|rate|kitna|charges|pricing/.test(q);
   const asksContact = /contact|call|whatsapp|founder|human|team/.test(q);
+  const asksObjection = /expensive|cant afford|think about|not sure|later|maybe/.test(q);
   const greetingOnly = /^(hi|hello|hey|salam|assalam|aoa|yo)[!.\s]*$/i.test(String(lastUserMessage).trim());
 
   if (greetingOnly) {
-    return 'Hey! I can help with social media, ads, website, and lead generation. What is your main growth problem right now?';
+    return "Welcome to ADRAK Digital — where businesses stop struggling and start dominating. I'm Aria. Tell me ONE thing: what's the #1 problem holding your business back right now?";
   }
 
   if (asksAudit) {
     if (!profiles.length) {
-      return 'Bilkul. Send your Instagram/Facebook handle or page URL first, and I will do a quick practical audit with score, gaps, and clear next steps.';
+      return "Let's go. Share your Instagram or Facebook handle and I'll give you a sharp audit — score, exact gaps, and the moves that will flip your results. Where are you leaving money on the table right now?";
     }
 
     const audits = profiles.slice(0, 2).map((profile) => {
       const report = buildQuickAudit(profile);
-      return `**${profile.platform} Audit (${profile.value}) - ${report.score}/10**\n- ${report.findings.join('\n- ')}`;
+      return `**${profile.platform} Audit (${profile.value}) — ${report.score}/10**\n- ${report.findings.join('\n- ')}`;
     });
 
     const contentOffer = KB.offers.find((o) => o.id === 'content');
-    return `${audits.join('\n\n')}\n\nBased on this, the best starting plan is **${contentOffer.name}** (${contentOffer.priceDisplay}). If you want, I can also give you a 30-day content direction for your niche.`;
+    return `${audits.join('\n\n')}\n\n**This is where you're bleeding clients.** The fastest fix? **${contentOffer.name}** at **${contentOffer.priceDisplay}** — and right now you can lock it in at **50% off** with code **FOUNDING50**. This offer won't be here forever. Want me to map out your first 30 days?`;
   }
 
   if (/instagram|facebook|fb|social/.test(q) && profiles.length) {
-    return 'Great, I got your profile details. Do you want a quick audit (score + improvements) or direct package recommendation?';
+    return "Got your profile. Two ways to go: I hit you with a full audit (score + what to fix), or I cut straight to the best package for your business. Which do you want — the diagnosis or the prescription?";
+  }
+
+  if (asksObjection) {
+    return `Listen — **${offer.priceDisplay}** split over a month is less than one lost client. And right now you get it at **50% off** with code **${KB.discount.code}**. The real question is: what does 10 new clients a month mean for your revenue? That's what ADRAK delivers. Ready to move?`;
   }
 
   if (asksPrice) {
-    return `Great question. **${offer.name}** is **${offer.priceDisplay}** and you also get our **${KB.discount.label}** with code **${KB.discount.code}**. Share your business type and I will recommend the exact plan with next steps.`;
+    return `Here's the deal: **${offer.name}** is **${offer.priceDisplay}** — and as a founding client you slash that by **50%** using code **${KB.discount.code}**. That's the best ROI you'll find anywhere in this market. What's your business niche? I'll show you the exact numbers.`;
   }
 
   if (asksContact) {
-    return `You can connect directly on WhatsApp: **${KB.company.whatsappDisplay}** or Instagram: **${KB.company.founderIG}**. If you want, I can still suggest the best package first before you book.`;
+    return `Direct line to the top — WhatsApp: **${KB.company.whatsappDisplay}** | Instagram: **${KB.company.founderIG}**. Tell Daniyal that Aria sent you and you want the best deal. Before you go — want me to tell you exactly which package to ask for?`;
   }
 
   if (asksRecommendation) {
-    return `Based on your goal, I recommend **${offer.name}** (${offer.priceDisplay}). You also qualify for **${KB.discount.label}** with code **${KB.discount.code}**. Share your business niche and I will tailor the plan in detail.`;
+    return `No guesswork. Based on your goal, **${offer.name}** (${offer.priceDisplay}) is your move — it's been the game-changer for businesses just like yours. Stack the **${KB.discount.label}** on top with code **${KB.discount.code}** and this is the best deal in the market right now. What's your niche? Let's make it personal.`;
   }
 
-  return 'I can help in 3 ways: quick social audit, package recommendation, or pricing breakdown. Tell me which one you want first, and share your niche if you have one.';
+  return "Three things I can do for you right now: **rip apart your social profile** and show you what to fix, **recommend the exact package** that fits your goal, or **break down the pricing** with the best deal available. Which one? — and what business are you in?";
 }
 
 app.post('/api/chat', async (req, res) => {
@@ -292,7 +298,7 @@ app.post('/api/chat', async (req, res) => {
       body: JSON.stringify({
         model: 'llama-3.3-70b-versatile',
         max_tokens: 900,
-        temperature: 0.7,
+        temperature: 0.9,
         messages: [{ role: 'system', content: buildSystem() }, ...(messages || [])]
       })
     });
