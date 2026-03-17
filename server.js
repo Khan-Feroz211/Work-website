@@ -81,10 +81,26 @@ const KB = {
   discount: { percent: 50, code: 'FOUNDING50', label: '50% Founding Client Discount' }
 };
 
-function buildSystem() {
+function buildSystem(style = 'premium') {
+  const styleGuide = {
+    premium:
+      'Tone: premium consultant energy. confident, strategic, composed. avoid hype spam. focus on clarity, authority, and ROI.',
+    softer:
+      'Tone: supportive and calm. no pressure language. guide the client with empathy, simple steps, and confidence-building recommendations.',
+    harder:
+      'Tone: high urgency closer. direct and assertive. challenge indecision, emphasize market timing and downside of waiting.',
+    urdu:
+      'Tone: Urdu-first Roman Urdu/Hinglish. keep language natural for Pakistan business owners and close with crisp action steps.'
+  };
+
+  const selectedStyle = styleGuide[style] || styleGuide.premium;
+
   return `You are Aria — the sharpest, most relentless deal-closer in the digital marketing game. You work for ADRAK Digital, the #1 growth agency in Islamabad, Pakistan. You don't just sell packages — you sell transformation, dominance, and results. You are THE world's greatest dealer. Think Wolf of Wall Street energy: bold, magnetic, unstoppable, and 100% obsessed with getting your client the best deal possible. You create urgency. You paint the picture of what's possible. You close.
 
 COMPANY: ADRAK Digital | WhatsApp: 0333-996-2158 | Instagram: @adrakdigital | Founder: Daniyal Ahmad Khan (@preneurbhaya)
+
+STYLE MODE:
+${selectedStyle}
 
 OFFERS:
 ${KB.offers.map((o) => `- ${o.name} (${o.priceDisplay}): ${o.desc} [ID: ${o.id}]`).join('\n')}
@@ -279,8 +295,9 @@ function fallbackReply(messages) {
 }
 
 app.post('/api/chat', async (req, res) => {
-  const { messages } = req.body;
+  const { messages, persona } = req.body;
   const KEY = process.env.GROQ_API_KEY;
+  const style = ['premium', 'softer', 'harder', 'urdu'].includes(persona) ? persona : 'premium';
 
   if (!KEY) {
     return res.json({
@@ -299,7 +316,7 @@ app.post('/api/chat', async (req, res) => {
         model: 'llama-3.3-70b-versatile',
         max_tokens: 900,
         temperature: 0.9,
-        messages: [{ role: 'system', content: buildSystem() }, ...(messages || [])]
+        messages: [{ role: 'system', content: buildSystem(style) }, ...(messages || [])]
       })
     });
 
@@ -331,6 +348,58 @@ app.post('/api/chat', async (req, res) => {
 });
 
 app.get('/api/offers', (req, res) => res.json({ offers: KB.offers, discount: KB.discount }));
+
+app.post('/api/leads', async (req, res) => {
+  const { name, phone, niche, source } = req.body || {};
+
+  if (!name || !phone || !niche) {
+    return res.status(400).json({ error: 'name, phone, and niche are required' });
+  }
+
+  const lead = {
+    name: String(name).trim(),
+    phone: String(phone).trim(),
+    niche: String(niche).trim(),
+    source: String(source || 'website-sidebar').trim(),
+    createdAt: new Date().toISOString()
+  };
+
+  const crmWebhook = process.env.CRM_WEBHOOK_URL;
+  let crmStatus = 'skipped';
+  let crmError = null;
+
+  if (crmWebhook) {
+    try {
+      const webhookResponse = await fetch(crmWebhook, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(lead)
+      });
+
+      crmStatus = webhookResponse.ok ? 'sent' : 'failed';
+      if (!webhookResponse.ok) {
+        crmError = `CRM webhook returned ${webhookResponse.status}`;
+      }
+    } catch (error) {
+      crmStatus = 'failed';
+      crmError = error.message;
+    }
+  }
+
+  const waMessage = `Assalam o Alaikum ADRAK Team,%0A%0ANew lead details:%0AName: ${encodeURIComponent(
+    lead.name
+  )}%0APhone: ${encodeURIComponent(lead.phone)}%0ABusiness niche: ${encodeURIComponent(
+    lead.niche
+  )}%0ASource: ${encodeURIComponent(lead.source)}%0A%0APlease contact me for consultation.`;
+
+  return res.json({
+    ok: true,
+    lead,
+    crmStatus,
+    crmError,
+    whatsappUrl: `https://wa.me/${KB.company.whatsapp}?text=${waMessage}`
+  });
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`✅ ADRAK running on http://localhost:${PORT}`));

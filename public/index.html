@@ -935,6 +935,264 @@
         font-size: 14px;
       }
 
+      .chat-launcher {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        z-index: 130;
+        border: 1px solid var(--border);
+        background: linear-gradient(100deg, var(--plasma), var(--plasma2));
+        color: var(--bg);
+        padding: 14px 16px;
+        font-family: "JetBrains Mono", monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        font-size: 10px;
+      }
+
+      .dealbot {
+        position: fixed;
+        top: 18px;
+        right: 18px;
+        width: min(420px, calc(100vw - 36px));
+        height: calc(100vh - 36px);
+        max-height: 860px;
+        border: 1px solid var(--border);
+        background: var(--bg2);
+        z-index: 140;
+        transform: translateX(calc(100% + 30px));
+        transition: transform 360ms ease;
+        display: grid;
+        grid-template-rows: auto auto 1fr auto;
+      }
+
+      .dealbot.open {
+        transform: translateX(0);
+      }
+
+      .dealbot-head {
+        border-bottom: 1px solid var(--border);
+        padding: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .dealbot-head h3 {
+        font-size: 20px;
+      }
+
+      .dealbot-head p {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        line-height: 1.7;
+        margin-top: 4px;
+      }
+
+      .dealbot-close {
+        width: 34px;
+        height: 34px;
+        border: 1px solid var(--border);
+        background: var(--bg3);
+        color: var(--text);
+        font-size: 16px;
+        line-height: 1;
+      }
+
+      .persona-wrap {
+        border-bottom: 1px solid var(--border);
+        padding: 12px;
+      }
+
+      .persona-wrap label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--plasma2);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 9px;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+      }
+
+      .persona-select {
+        width: 100%;
+        border: 1px solid var(--border);
+        background: var(--bg3);
+        color: var(--text);
+        padding: 10px;
+        font-family: "Manrope", sans-serif;
+      }
+
+      .lead-form {
+        border-bottom: 1px solid var(--border);
+        padding: 12px;
+        display: grid;
+        gap: 8px;
+      }
+
+      .lead-form label {
+        color: var(--plasma2);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 9px;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+      }
+
+      .lead-form input {
+        width: 100%;
+        border: 1px solid var(--border);
+        background: var(--bg3);
+        color: var(--text);
+        padding: 10px;
+        font-family: "Manrope", sans-serif;
+      }
+
+      .lead-form button {
+        border: 1px solid var(--border);
+        background: rgba(0, 240, 255, 0.12);
+        color: var(--arc);
+        padding: 10px;
+        font-family: "JetBrains Mono", monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 9px;
+      }
+
+      .dealbot-quick {
+        border-bottom: 1px solid var(--border);
+        padding: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .quick-chip {
+        border: 1px solid var(--border);
+        background: var(--bg3);
+        color: var(--text2);
+        font-family: "JetBrains Mono", monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-size: 9px;
+        padding: 8px 10px;
+      }
+
+      .dealbot-log {
+        padding: 14px;
+        overflow: auto;
+        display: grid;
+        gap: 10px;
+      }
+
+      .deal-msg {
+        border: 1px solid var(--border);
+        padding: 12px;
+        font-size: 14px;
+        line-height: 1.7;
+        color: var(--text2);
+      }
+
+      .deal-msg strong {
+        color: var(--text);
+      }
+
+      .deal-msg.user {
+        background: rgba(0, 240, 255, 0.08);
+      }
+
+      .deal-msg.bot {
+        background: rgba(123, 47, 255, 0.08);
+        border-left: 2px solid var(--plasma);
+      }
+
+      .offer-suggest {
+        margin-top: 10px;
+        border: 1px solid var(--border);
+        background: var(--bg3);
+        padding: 10px;
+      }
+
+      .offer-suggest .mini-label {
+        display: block;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 9px;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--hot);
+        margin-bottom: 6px;
+      }
+
+      .offer-suggest b {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .offer-suggest small {
+        color: var(--arc);
+        font-family: "JetBrains Mono", monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 9px;
+      }
+
+      .dealbot-form {
+        border-top: 1px solid var(--border);
+        padding: 12px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+      }
+
+      .dealbot-input {
+        border: 1px solid var(--border);
+        background: var(--bg3);
+        color: var(--text);
+        padding: 12px;
+        font-family: "Manrope", sans-serif;
+      }
+
+      .dealbot-send {
+        border: 1px solid transparent;
+        background: linear-gradient(100deg, var(--plasma), var(--plasma2));
+        color: var(--bg);
+        padding: 0 14px;
+        font-family: "JetBrains Mono", monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-size: 10px;
+      }
+
+      .dealbot-typing {
+        display: none;
+        align-items: center;
+        gap: 6px;
+        padding: 0 14px 8px;
+      }
+
+      .dealbot-typing.show {
+        display: inline-flex;
+      }
+
+      .dealbot-typing i {
+        display: block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--plasma2);
+        animation: bounce 1s ease infinite;
+      }
+
+      .dealbot-typing i:nth-child(2) {
+        animation-delay: 120ms;
+      }
+
+      .dealbot-typing i:nth-child(3) {
+        animation-delay: 240ms;
+      }
+
       .reveal {
         opacity: 0;
         transform: translateY(36px);
@@ -1069,6 +1327,22 @@
 
         .offer-card .ghost {
           display: none;
+        }
+
+        .chat-launcher {
+          right: 14px;
+          bottom: 14px;
+        }
+
+        .dealbot {
+          top: 0;
+          right: 0;
+          width: 100vw;
+          height: 100vh;
+          max-height: none;
+          transform: translateX(100%);
+          border: none;
+          border-left: 1px solid var(--border);
         }
       }
 
@@ -1615,11 +1889,200 @@
       </div>
     </footer>
 
+    <button class="chat-launcher" type="button" aria-controls="dealbot" aria-expanded="false">Open Deal Bot</button>
+
+    <aside id="dealbot" class="dealbot" aria-label="Deal Closing Chatbot">
+      <div class="dealbot-head">
+        <div>
+          <h3>ADRAK Deal Bot</h3>
+          <p>Powered by Groq · Trained for Deals</p>
+        </div>
+        <button class="dealbot-close" type="button" aria-label="Close chatbot">×</button>
+      </div>
+
+      <div class="persona-wrap">
+        <label for="personaMode">Sales Personality</label>
+        <select id="personaMode" class="persona-select" name="personaMode">
+          <option value="premium">Premium Consultant</option>
+          <option value="softer">Softer Guide</option>
+          <option value="harder">Hard Closer</option>
+          <option value="urdu">Urdu-First</option>
+        </select>
+      </div>
+
+      <form class="lead-form" id="leadForm">
+        <label for="leadName">Lead Capture</label>
+        <input id="leadName" type="text" name="name" placeholder="Name" required />
+        <input id="leadPhone" type="text" name="phone" placeholder="Phone" required />
+        <input id="leadNiche" type="text" name="niche" placeholder="Business niche" required />
+        <button type="submit">Send to WhatsApp or CRM</button>
+      </form>
+
+      <div class="dealbot-quick">
+        <button class="quick-chip" type="button" data-prompt="I need more leads for my business">Need more leads</button>
+        <button class="quick-chip" type="button" data-prompt="Audit my Instagram profile to find why sales are low">Instagram audit</button>
+        <button class="quick-chip" type="button" data-prompt="Audit my Facebook page to find why sales are low">Facebook audit</button>
+        <button class="quick-chip" type="button" data-prompt="Recommend the best offer for my business">Best offer</button>
+      </div>
+
+      <div class="dealbot-log" id="dealbotLog" aria-live="polite"></div>
+      <div class="dealbot-typing" id="dealbotTyping" aria-hidden="true"><i></i><i></i><i></i></div>
+
+      <form class="dealbot-form" id="dealbotForm">
+        <input
+          id="dealbotInput"
+          class="dealbot-input"
+          type="text"
+          name="message"
+          placeholder="Tell us your issue."
+          autocomplete="off"
+          required
+        />
+        <button class="dealbot-send" type="submit">Send</button>
+      </form>
+    </aside>
+
     <script>
       const header = document.querySelector('.site-header');
       const hamburger = document.querySelector('.hamburger');
       const mobileMenu = document.querySelector('.mobile-menu');
       const mobileLinks = document.querySelectorAll('.mobile-menu a');
+      const chatLauncher = document.querySelector('.chat-launcher');
+      const dealbot = document.querySelector('#dealbot');
+      const dealbotClose = document.querySelector('.dealbot-close');
+      const dealbotForm = document.querySelector('#dealbotForm');
+      const dealbotInput = document.querySelector('#dealbotInput');
+      const dealbotLog = document.querySelector('#dealbotLog');
+      const dealbotTyping = document.querySelector('#dealbotTyping');
+      const quickChips = Array.from(document.querySelectorAll('.quick-chip'));
+      const personaMode = document.querySelector('#personaMode');
+      const leadForm = document.querySelector('#leadForm');
+      const leadName = document.querySelector('#leadName');
+      const leadPhone = document.querySelector('#leadPhone');
+      const leadNiche = document.querySelector('#leadNiche');
+
+      const dealState = {
+        messages: [
+          {
+            role: 'assistant',
+            content:
+              "Assalam o Alaikum. Main ADRAK Deal Bot hun. Aapka biggest issue kya hai right now: leads, sales, ya social media?"
+          }
+        ],
+        offers: [],
+        discount: null,
+        persona: 'premium'
+      };
+
+      if (personaMode) {
+        personaMode.addEventListener('change', () => {
+          dealState.persona = personaMode.value;
+          appendDealMessage('bot', `Personality mode switched to **${dealState.persona}**. Share your issue and I will respond in this style.`);
+        });
+      }
+
+      const escapeHTML = (value) =>
+        String(value)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/\"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+
+      const parseOfferTags = (text) => {
+        const ids = new Set();
+        const pattern = /\[OFFER:([a-z0-9_-]+)\]/gi;
+        let match;
+        while ((match = pattern.exec(String(text))) !== null) {
+          ids.add(match[1]);
+        }
+        return Array.from(ids);
+      };
+
+      const stripTags = (text) =>
+        String(text)
+          .replace(/\[(?:OFFER|DISCOUNT|AUDIT):[^\]]*\]/gi, '')
+          .replace(/\n{3,}/g, '\n\n')
+          .trim();
+
+      const formatMessage = (content) => {
+        const escaped = escapeHTML(content);
+        return escaped
+          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+          .replace(/\n/g, '<br />');
+      };
+
+      const renderOfferSuggestion = (offer) => {
+        if (!offer) {
+          return '';
+        }
+
+        return `<div class="offer-suggest"><span class="mini-label">Recommended Offer</span><b>${escapeHTML(
+          offer.icon ? `${offer.icon} ${offer.name}` : offer.name
+        )}</b><div>${escapeHTML(offer.desc || '')}</div><small>${escapeHTML(offer.priceDisplay || '')}</small></div>`;
+      };
+
+      const appendDealMessage = (role, rawText, offerIds = []) => {
+        const text = stripTags(rawText || '');
+        const node = document.createElement('article');
+        node.className = `deal-msg ${role === 'user' ? 'user' : 'bot'}`;
+
+        const offerMap = new Map((dealState.offers || []).map((o) => [o.id, o]));
+        const recommended = offerIds.map((id) => offerMap.get(id)).filter(Boolean);
+        const fallback = !recommended.length && role === 'bot' && dealState.offers[0] ? [dealState.offers[0]] : [];
+        const cards = [...recommended, ...fallback].slice(0, 1).map(renderOfferSuggestion).join('');
+
+        node.innerHTML = `${formatMessage(text)}${cards}`;
+        dealbotLog.append(node);
+        dealbotLog.scrollTop = dealbotLog.scrollHeight;
+      };
+
+      const setDealbotOpen = (open) => {
+        if (!dealbot || !chatLauncher) {
+          return;
+        }
+
+        dealbot.classList.toggle('open', open);
+        chatLauncher.setAttribute('aria-expanded', String(open));
+      };
+
+      const setTyping = (loading) => {
+        dealbotTyping.classList.toggle('show', loading);
+      };
+
+      const sendDealMessage = async (message) => {
+        const trimmed = String(message || '').trim();
+        if (!trimmed) {
+          return;
+        }
+
+        dealState.messages.push({ role: 'user', content: trimmed });
+        appendDealMessage('user', trimmed);
+        setTyping(true);
+
+        try {
+          const response = await fetch('/api/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ messages: dealState.messages, persona: dealState.persona })
+          });
+
+          const data = await response.json();
+          const replyText = String(data.reply || 'I hit a temporary issue. Please try again.');
+          const offerIds = parseOfferTags(replyText);
+
+          dealState.offers = Array.isArray(data.offers) ? data.offers : dealState.offers;
+          dealState.discount = data.discount || dealState.discount;
+          dealState.messages.push({ role: 'assistant', content: replyText });
+          appendDealMessage('bot', replyText, offerIds);
+        } catch (error) {
+          const fallback = 'Connection issue. Share your business niche and I will recommend the best package right away.';
+          dealState.messages.push({ role: 'assistant', content: fallback });
+          appendDealMessage('bot', fallback);
+        } finally {
+          setTyping(false);
+        }
+      };
 
       const onScroll = () => {
         header.classList.toggle('scrolled', window.scrollY > 40);
@@ -1627,6 +2090,81 @@
 
       onScroll();
       window.addEventListener('scroll', onScroll, { passive: true });
+
+      appendDealMessage('bot', dealState.messages[0].content);
+
+      if (chatLauncher) {
+        chatLauncher.addEventListener('click', () => {
+          const open = !dealbot.classList.contains('open');
+          setDealbotOpen(open);
+        });
+      }
+
+      if (dealbotClose) {
+        dealbotClose.addEventListener('click', () => setDealbotOpen(false));
+      }
+
+      if (dealbotForm) {
+        dealbotForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const text = dealbotInput.value;
+          dealbotInput.value = '';
+          sendDealMessage(text);
+        });
+      }
+
+      quickChips.forEach((chip) => {
+        chip.addEventListener('click', () => {
+          const prompt = chip.getAttribute('data-prompt') || '';
+          setDealbotOpen(true);
+          sendDealMessage(prompt);
+        });
+      });
+
+      if (leadForm) {
+        leadForm.addEventListener('submit', async (event) => {
+          event.preventDefault();
+
+          const payload = {
+            name: leadName.value.trim(),
+            phone: leadPhone.value.trim(),
+            niche: leadNiche.value.trim(),
+            source: 'website-sidebar'
+          };
+
+          if (!payload.name || !payload.phone || !payload.niche) {
+            appendDealMessage('bot', 'Please fill name, phone, and business niche before submitting lead.');
+            return;
+          }
+
+          try {
+            const response = await fetch('/api/leads', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            });
+
+            const data = await response.json();
+            if (!response.ok || !data.ok) {
+              throw new Error(data.error || 'Lead submission failed');
+            }
+
+            const crmLine = data.crmStatus === 'sent' ? 'Lead sent to CRM successfully.' : 'CRM not configured, sent to WhatsApp only.';
+            appendDealMessage(
+              'bot',
+              `Lead captured for **${payload.name}**. ${crmLine} Opening WhatsApp now so you can lock the consultation instantly.`
+            );
+
+            if (data.whatsappUrl) {
+              window.open(data.whatsappUrl, '_blank', 'noopener,noreferrer');
+            }
+
+            leadForm.reset();
+          } catch (error) {
+            appendDealMessage('bot', `Lead capture failed: ${error.message}`);
+          }
+        });
+      }
 
       if (hamburger && mobileMenu) {
         hamburger.addEventListener('click', () => {
