@@ -1,6 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none">
-  <rect width="256" height="256" fill="#0A0A0A" />
-  <path d="M128 34L215 128L128 222L41 128L128 34Z" fill="#C9A84C" />
-  <path d="M128 63L186 128L128 193L70 128L128 63Z" fill="#0A0A0A" fill-opacity="0.24" />
-  <path d="M128 63L186 128" stroke="#E8C96A" stroke-width="7" stroke-linecap="round" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="ADRAK favicon">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d4b478"/>
+      <stop offset="100%" stop-color="#8f6f3a"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="24" fill="#0a0a0a"/>
+  <path d="M64 18L109 110H94L82 86H46L34 110H19L64 18ZM53 72H75L64 50L53 72Z" fill="url(#g)"/>
 </svg>
