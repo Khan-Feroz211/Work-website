@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const { createClient } = require('redis');
 require('dotenv').config();
 
 const app = express();
@@ -11,6 +12,29 @@ app.use(express.static(path.join(__dirname, 'public')));
 const leadRateWindowMs = 15 * 60 * 1000;
 const leadRateMaxRequests = 5;
 const leadRateByIp = new Map();
+const redisUrl = process.env.REDIS_URL;
+
+let redisClient = null;
+let redisReady = false;
+
+if (redisUrl) {
+  redisClient = createClient({ url: redisUrl });
+
+  redisClient.on('ready', () => {
+    redisReady = true;
+    console.log('✅ Redis connected for lead rate limiting');
+  });
+
+  redisClient.on('error', (error) => {
+    redisReady = false;
+    console.error('Redis error, using in-memory rate limiter:', error.message);
+  });
+
+  redisClient.connect().catch((error) => {
+    redisReady = false;
+    console.error('Redis connection failed, using in-memory rate limiter:', error.message);
+  });
+}
 
 function getClientIp(req) {
   const forwarded = req.headers['x-forwarded-for'];
@@ -20,7 +44,7 @@ function getClientIp(req) {
   return req.ip || req.socket?.remoteAddress || 'unknown';
 }
 
-function isRateLimited(ip) {
+function isRateLimitedMemory(ip) {
   const now = Date.now();
   const bucket = leadRateByIp.get(ip) || [];
   const fresh = bucket.filter((ts) => now - ts < leadRateWindowMs);
@@ -34,6 +58,34 @@ function isRateLimited(ip) {
   fresh.push(now);
   leadRateByIp.set(ip, fresh);
   return { limited: false, retryAfterMs: 0 };
+}
+
+async function isRateLimited(ip) {
+  if (!redisClient || !redisReady) {
+    return isRateLimitedMemory(ip);
+  }
+
+  const key = `lead-rate:${ip}`;
+
+  try {
+    const count = await redisClient.incr(key);
+    if (count === 1) {
+      await redisClient.pExpire(key, leadRateWindowMs);
+    }
+
+    const ttl = await redisClient.pTTL(key);
+    if (count > leadRateMaxRequests) {
+      return {
+        limited: true,
+        retryAfterMs: ttl > 0 ? ttl : leadRateWindowMs
+      };
+    }
+
+    return { limited: false, retryAfterMs: 0 };
+  } catch (error) {
+    console.error('Redis rate limit check failed, falling back to memory:', error.message);
+    return isRateLimitedMemory(ip);
+  }
 }
 
 function normalizePhone(phone) {
@@ -394,7 +446,7 @@ app.post('/api/leads', async (req, res) => {
     return res.status(200).json({ ok: true, ignored: true });
   }
 
-  const rate = isRateLimited(ip);
+  const rate = await isRateLimited(ip);
   if (rate.limited) {
     res.set('Retry-After', String(Math.ceil(rate.retryAfterMs / 1000)));
     return res.status(429).json({
