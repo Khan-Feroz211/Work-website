@@ -3,1020 +3,1487 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ADRAK Digital - Your Business. Automated. Growing.</title>
+    <title>ADRAK Atelier - Luxury Freelance Creative Agency</title>
     <meta
       name="description"
-      content="ADRAK Digital builds websites, content systems, paid ads and AI automation for growth-focused businesses."
+      content="A premium freelance creative agency crafting high-performance brand systems, websites, campaigns, and digital experiences."
     />
-    <meta name="theme-color" content="#060606" />
+    <meta name="theme-color" content="#0A0A0A" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="ADRAK Digital" />
-    <meta property="og:title" content="ADRAK Digital - Your Business. Automated. Growing." />
+    <meta property="og:title" content="ADRAK Atelier - Luxury Freelance Creative Agency" />
     <meta
       property="og:description"
-      content="AI-powered digital systems for ISB/RWP businesses: websites, content, paid ads, and WhatsApp automation."
+      content="Black Gold Obsidian design, cinematic interactions, and conversion-focused creative direction."
     />
-    <meta property="og:url" content="https://adrak.digital/" />
-    <meta property="og:image" content="https://adrak.digital/og-image.svg" />
-    <meta property="og:image:alt" content="ADRAK Digital brand preview" />
+    <meta property="og:image" content="/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="ADRAK Digital - Your Business. Automated. Growing." />
+    <meta name="twitter:title" content="ADRAK Atelier - Luxury Freelance Creative Agency" />
     <meta
       name="twitter:description"
-      content="Websites, content systems, paid ads, and AI automation for growth-focused businesses in Islamabad and Rawalpindi."
+      content="Luxury-grade freelance services for founders who expect world-class execution."
     />
-    <meta name="twitter:image" content="https://adrak.digital/og-image.svg" />
-    <link rel="canonical" href="https://adrak.digital/" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="favicon.svg" />
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.svg" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&family=DM+Sans:wght@300;400&family=Geist+Mono:wght@400&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        --gold: #bf9a5a;
-        --gold-lite: #d4b478;
-        --bg: #060606;
-        --bg-soft: #0d0d0d;
-        --bg-card: #121212;
-        --border: rgba(191, 154, 90, 0.2);
-        --text: #eddfc8;
-        --muted: #958d7d;
-        --dim: #5f5a53;
-        --radius: 18px;
+        --bg-primary: #0a0a0a;
+        --bg-secondary: #111111;
+        --bg-surface: #161616;
+        --accent-gold: #c9a84c;
+        --accent-gold-light: #e8c96a;
+        --accent-gold-glow: rgba(201, 168, 76, 0.15);
+        --text-primary: #f5f0e8;
+        --text-secondary: #9a9585;
+        --text-muted: #4a4740;
+        --border: rgba(201, 168, 76, 0.18);
+        --container: min(1240px, calc(100% - 3rem));
       }
 
       * {
         box-sizing: border-box;
       }
 
-      html,
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         margin: 0;
-        background: radial-gradient(circle at 18% 8%, rgba(191, 154, 90, 0.12), transparent 30%), var(--bg);
-        color: var(--text);
-        font-family: "Outfit", sans-serif;
-        scroll-behavior: smooth;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        font-family: "DM Sans", sans-serif;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.75;
+        text-rendering: optimizeLegibility;
+        overflow-x: hidden;
       }
 
       a {
         color: inherit;
+        text-decoration: none;
       }
 
-      .layout {
-        width: min(1400px, 100% - 2rem);
-        margin: 0 auto;
+      img {
+        max-width: 100%;
         display: block;
       }
 
-      .main {
-        min-width: 0;
+      .container {
+        width: var(--container);
+        margin: 0 auto;
       }
 
-      .nav {
-        position: sticky;
-        top: 10px;
-        z-index: 50;
-        margin: 10px 0 26px;
-        background: rgba(8, 8, 8, 0.86);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 100px;
-        padding: 10px 12px 10px 24px;
+      .label {
+        font-family: "Geist Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+      }
+
+      .gold-label {
+        color: var(--accent-gold);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Cormorant Garamond", serif;
+        margin: 0;
+      }
+
+      h1 {
+        font-size: clamp(52px, 8vw, 110px);
+        line-height: 0.95;
+        font-weight: 300;
+        letter-spacing: -0.015em;
+      }
+
+      h2 {
+        font-size: clamp(36px, 5vw, 72px);
+        line-height: 0.95;
+        font-weight: 300;
+        letter-spacing: -0.01em;
+      }
+
+      p {
+        margin: 0;
+        color: var(--text-secondary);
+      }
+
+      .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 140;
+        backdrop-filter: blur(16px);
+        background: linear-gradient(180deg, rgba(10, 10, 10, 0.88), rgba(10, 10, 10, 0.44));
+        border-bottom: 1px solid rgba(201, 168, 76, 0.07);
+      }
+
+      .nav-wrap {
+        width: var(--container);
+        margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        backdrop-filter: blur(16px);
+        gap: 1rem;
+        min-height: 78px;
       }
 
       .brand {
-        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .brand-mark {
+        width: 18px;
+        height: 18px;
+        border: 1px solid var(--accent-gold);
+        transform: rotate(45deg);
+        background: linear-gradient(145deg, rgba(201, 168, 76, 0.16), rgba(201, 168, 76, 0));
+      }
+
+      .brand-name {
         font-family: "Cormorant Garamond", serif;
-        font-size: 1.2rem;
-        color: var(--gold);
-        font-weight: 700;
+        font-size: 27px;
+        color: var(--text-primary);
       }
 
       .nav-links {
         display: flex;
-        gap: 0.3rem;
-      }
-
-      .nav-links a {
-        text-decoration: none;
-        color: var(--muted);
-        padding: 0.46rem 0.82rem;
-        border-radius: 999px;
-        font-size: 0.84rem;
-      }
-
-      .nav-links a:hover {
-        background: rgba(255, 255, 255, 0.06);
-        color: var(--text);
-      }
-
-      .nav-cta {
-        text-decoration: none;
-        font-weight: 600;
-        background: var(--gold);
-        color: #0a0a0a;
-        border-radius: 999px;
-        padding: 0.6rem 1rem;
-        font-size: 0.82rem;
-      }
-
-      .hero {
-        min-height: 72vh;
-        display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 1rem;
         align-items: center;
-        padding: 2rem 0 1.2rem;
+        gap: 1.35rem;
       }
 
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.45rem;
+      .nav-link {
+        position: relative;
+        font-family: "DM Sans", sans-serif;
+        font-size: 14px;
+        color: var(--text-secondary);
+        transition: color 0.3s ease;
+        padding-bottom: 0.2rem;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background: var(--accent-gold);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.35s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--text-primary);
+      }
+
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        transform: scaleX(1);
+      }
+
+      .menu-toggle {
+        display: none;
+        width: 42px;
+        height: 42px;
+        background: transparent;
         border: 1px solid var(--border);
-        color: var(--gold);
-        border-radius: 100px;
-        padding: 0.4rem 0.72rem;
-        font-size: 0.7rem;
-        text-transform: uppercase;
-        letter-spacing: 0.09em;
-      }
-
-      .h-title {
-        margin: 0.9rem 0 0;
-        font-family: "Cormorant Garamond", serif;
-        line-height: 0.96;
-        letter-spacing: -0.02em;
-        font-size: clamp(2.8rem, 8vw, 5.6rem);
-      }
-
-      .h-title em {
-        color: var(--gold);
-        font-style: italic;
-      }
-
-      .sub {
-        max-width: 560px;
-        color: var(--muted);
-        line-height: 1.7;
-        margin-top: 1rem;
-      }
-
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.7rem;
-        margin-top: 1.2rem;
-      }
-
-      .btn {
-        text-decoration: none;
-        border-radius: 999px;
-        padding: 0.75rem 1.1rem;
-        font-size: 0.86rem;
-        font-weight: 600;
-      }
-
-      .btn-main {
-        background: var(--gold);
-        color: #050505;
-      }
-
-      .btn-ghost {
-        border: 1px solid rgba(255, 255, 255, 0.16);
-        color: var(--text);
-      }
-
-      .stats {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.6rem;
-        margin-top: 1.6rem;
-      }
-
-      .stat {
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 12px;
-        padding: 0.75rem;
-        background: rgba(255, 255, 255, 0.02);
-      }
-
-      .stat b {
-        display: block;
-        color: var(--gold);
-        font-family: "Cormorant Garamond", serif;
-        font-size: 1.5rem;
-      }
-
-      .stat span {
-        font-size: 0.72rem;
-        color: var(--dim);
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-      }
-
-      .mock {
-        border: 1px solid var(--border);
-        border-radius: 22px;
-        background: linear-gradient(160deg, #11100d, #0a0a0a);
-        padding: 0.8rem;
-        box-shadow: 0 40px 100px rgba(0, 0, 0, 0.55);
-      }
-
-      .mock .bar {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.4rem;
-      }
-
-      .dot {
-        width: 9px;
-        height: 9px;
         border-radius: 50%;
-      }
-
-      .dot.red {
-        background: #ff5f57;
-      }
-
-      .dot.yellow {
-        background: #ffbd2e;
-      }
-
-      .dot.green {
-        background: #27c93f;
-      }
-
-      .url {
-        margin-left: auto;
-        font-size: 0.66rem;
-        color: var(--dim);
-        font-family: "JetBrains Mono", monospace;
-      }
-
-      .mock-body {
-        border-radius: 14px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        background: #0b0b0b;
-        padding: 1rem;
-      }
-
-      .mini {
-        margin: 0;
-        color: var(--muted);
-        font-size: 0.82rem;
-        line-height: 1.55;
-      }
-
-      .ticker {
-        overflow: hidden;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        margin: 1.2rem 0 0;
-      }
-
-      .ticker-track {
-        display: flex;
-        width: max-content;
-        animation: slide 28s linear infinite;
-      }
-
-      .ticker-track span {
-        color: var(--dim);
-        font-size: 0.72rem;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        padding: 0.75rem 1.3rem;
-        white-space: nowrap;
-      }
-
-      .sec {
-        padding: 4.4rem 0 1.1rem;
-      }
-
-      .sec-eye {
-        margin: 0;
-        color: var(--gold);
-        font-size: 0.7rem;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-      }
-
-      .sec h2 {
-        margin: 0.4rem 0 0;
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(2rem, 4vw, 3.6rem);
-        line-height: 1.02;
-      }
-
-      .sec h2 em {
-        color: var(--gold);
-      }
-
-      .offers {
-        margin-top: 1.6rem;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.72rem;
-      }
-
-      .offer {
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 14px;
-        padding: 0.9rem;
-        background: var(--bg-card);
-      }
-
-      .offer .tag {
-        display: inline-block;
-        color: var(--gold);
-        font-size: 0.66rem;
-        text-transform: uppercase;
-        letter-spacing: 0.11em;
-      }
-
-      .offer h3 {
-        margin: 0.5rem 0 0;
-        font-size: 1rem;
-      }
-
-      .offer p {
-        margin: 0.5rem 0;
-        color: var(--muted);
-        font-size: 0.86rem;
-        line-height: 1.5;
-      }
-
-      .offer .price {
-        color: var(--gold-lite);
-        font-weight: 600;
-      }
-
-      .discount {
-        margin-top: 0.8rem;
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        padding: 0.8rem;
-        color: #d8cbb7;
-        background: linear-gradient(120deg, rgba(191, 154, 90, 0.16), rgba(191, 154, 90, 0.02));
-      }
-
-      .team-grid,
-      .journey,
-      .testimonials {
-        margin-top: 1.4rem;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.72rem;
-      }
-
-      .card {
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 14px;
-        padding: 1rem;
-        background: var(--bg-card);
-      }
-
-      .card h3 {
-        margin: 0;
-        font-size: 1rem;
-      }
-
-      .card p {
-        margin: 0.5rem 0 0;
-        color: var(--muted);
-        font-size: 0.88rem;
-        line-height: 1.58;
-      }
-
-      .cta-band {
-        margin: 2.4rem 0;
-        border: 1px solid var(--border);
-        border-radius: 20px;
-        padding: 1.4rem;
-        background: linear-gradient(130deg, rgba(191, 154, 90, 0.13), rgba(10, 10, 10, 0.4));
-        display: flex;
         align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
+        justify-content: center;
+        cursor: pointer;
       }
 
-      .cta-band p {
-        margin: 0;
-        color: #d4c9b8;
+      .menu-toggle span,
+      .menu-toggle::before,
+      .menu-toggle::after {
+        content: "";
+        width: 16px;
+        height: 1px;
+        background: var(--accent-gold);
+        position: absolute;
+        transition: transform 0.3s ease, opacity 0.3s ease;
       }
 
-      footer {
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        padding: 1.1rem 0 2.2rem;
-        color: var(--dim);
-        font-size: 0.84rem;
+      .menu-toggle::before {
+        transform: translateY(-5px);
       }
 
-      .sidebar {
+      .menu-toggle::after {
+        transform: translateY(5px);
+      }
+
+      .menu-open .menu-toggle span {
+        opacity: 0;
+      }
+
+      .menu-open .menu-toggle::before {
+        transform: rotate(45deg);
+      }
+
+      .menu-open .menu-toggle::after {
+        transform: rotate(-45deg);
+      }
+
+      .mobile-menu {
         position: fixed;
-        top: 14px;
-        right: 14px;
-        width: min(370px, calc(100vw - 20px));
-        height: calc(100vh - 28px);
-        border: 1px solid var(--border);
-        border-radius: 20px;
-        background: #0a0a0a;
+        inset: 0;
+        z-index: 130;
+        background: rgba(10, 10, 10, 0.95);
         display: grid;
-        grid-template-rows: auto auto 1fr auto;
-        padding: 0.85rem;
-        z-index: 200;
-        transform: translateX(calc(100% + 24px));
+        place-items: center;
         opacity: 0;
         pointer-events: none;
-        transition: transform 0.28s ease, opacity 0.28s ease;
+        transition: opacity 0.4s ease;
       }
 
-      .sidebar.open {
-        transform: translateX(0);
+      .mobile-menu nav {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .mobile-link {
+        opacity: 0;
+        transform: translateY(20px);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(38px, 10vw, 58px);
+        font-weight: 300;
+        color: var(--text-primary);
+      }
+
+      .menu-open .mobile-menu {
         opacity: 1;
         pointer-events: auto;
       }
 
-      .s-head {
+      .menu-open .mobile-link {
+        animation: mobileItemIn 0.6s ease forwards;
+      }
+
+      .menu-open .mobile-link:nth-child(2) {
+        animation-delay: 80ms;
+      }
+
+      .menu-open .mobile-link:nth-child(3) {
+        animation-delay: 160ms;
+      }
+
+      .menu-open .mobile-link:nth-child(4) {
+        animation-delay: 240ms;
+      }
+
+      .hero {
+        min-height: 100svh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        isolation: isolate;
+        padding-top: 110px;
+        background: radial-gradient(circle at 50% 45%, rgba(201, 168, 76, 0.07), transparent 45%), var(--bg-primary);
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+        opacity: 0;
+        animation: grainIn 1200ms ease forwards, grainDrift 18s linear infinite;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .hero-inner {
+        width: var(--container);
+        margin: 0 auto;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 3rem;
+        align-items: end;
+      }
+
+      .hero-label {
+        margin-bottom: 1.4rem;
+        opacity: 0;
+        transform: translateY(22px);
+        animation: revealUp 700ms ease 200ms forwards;
+      }
+
+      .hero-line-1 {
+        display: block;
+        opacity: 0;
+        transform: translateY(32px);
+        animation: revealUp 850ms cubic-bezier(0.2, 0.7, 0.1, 1) 400ms forwards;
+      }
+
+      .hero-line-2 {
+        display: inline-block;
+        font-style: italic;
+        color: var(--text-primary);
+        position: relative;
+        margin-top: 0.15em;
+        opacity: 0;
+        transform: translateY(32px);
+        animation: revealUp 850ms cubic-bezier(0.2, 0.7, 0.1, 1) 600ms forwards;
+      }
+
+      .hero-line-2 svg {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        bottom: -12px;
+      }
+
+      .hero-line-2 path {
+        stroke-dasharray: 260;
+        stroke-dashoffset: 260;
+        animation: lineDraw 900ms ease 760ms forwards;
+      }
+
+      .hero-copy {
+        max-width: 650px;
+        margin-top: 2.2rem;
+        opacity: 0;
+        animation: fadeIn 900ms ease 800ms forwards;
+      }
+
+      .hero-actions {
+        margin-top: 2.1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        opacity: 0;
+        transform: scale(0.95);
+        animation: ctaIn 700ms ease 1000ms forwards;
+      }
+
+      .btn-outline {
+        font-family: "DM Sans", sans-serif;
+        font-size: 14px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 0.95rem 1.7rem;
+        border: 1px solid var(--accent-gold);
+        color: var(--accent-gold);
+        background: transparent;
+        transition: color 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+      }
+
+      .btn-outline:hover,
+      .btn-outline:focus-visible {
+        color: #0a0a0a;
+        background: var(--accent-gold);
+        box-shadow: 0 16px 34px var(--accent-gold-glow);
+      }
+
+      .hero-side {
+        border: 1px solid var(--border);
+        background: linear-gradient(160deg, rgba(201, 168, 76, 0.08), rgba(255, 255, 255, 0));
+        padding: 1.5rem;
+        min-height: 280px;
+      }
+
+      .hero-side p {
+        margin-top: 0.7rem;
+      }
+
+      .separator {
+        width: var(--container);
+        margin: 0 auto;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+      }
+
+      main section {
+        padding: 7rem 0;
+      }
+
+      .section-intro {
+        display: grid;
+        gap: 1rem;
+        margin-bottom: 2.4rem;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 700ms ease-out, transform 700ms ease-out;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .services {
+        background: var(--bg-primary);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1.05fr;
+        grid-template-areas:
+          "card1 card2 card5"
+          "card3 card4 card5";
+        gap: 1.2rem;
+      }
+
+      .service-card {
+        position: relative;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border);
+        padding: 1.8rem;
+        min-height: 260px;
+        overflow: hidden;
+        transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.45s ease, border-color 0.45s ease;
+      }
+
+      .service-card::after {
+        content: "";
+        position: absolute;
+        inset: auto 10% -38% 10%;
+        height: 40%;
+        background: radial-gradient(circle, rgba(201, 168, 76, 0.45), transparent 70%);
+        opacity: 0;
+        transition: opacity 0.45s ease;
+        pointer-events: none;
+      }
+
+      .service-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--accent-gold);
+        box-shadow: 0 24px 48px rgba(201, 168, 76, 0.1);
+      }
+
+      .service-card:hover::after {
+        opacity: 0.32;
+      }
+
+      .service-card:nth-child(1) {
+        grid-area: card1;
+      }
+
+      .service-card:nth-child(2) {
+        grid-area: card2;
+      }
+
+      .service-card:nth-child(3) {
+        grid-area: card3;
+      }
+
+      .service-card:nth-child(4) {
+        grid-area: card4;
+      }
+
+      .service-card:nth-child(5) {
+        grid-area: card5;
+        min-height: 100%;
+      }
+
+      .service-number {
+        position: absolute;
+        right: 0.65rem;
+        top: 0.2rem;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 120px;
+        line-height: 1;
+        color: rgba(245, 240, 232, 0.04);
+        pointer-events: none;
+      }
+
+      .service-card h3 {
+        margin-top: 1.2rem;
+        font-size: clamp(28px, 2.8vw, 38px);
+        font-weight: 300;
+      }
+
+      .about {
+        background: var(--bg-secondary);
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .about-frame {
+        position: relative;
+        border: 1px solid var(--border);
+        padding: 1rem;
+        background: var(--bg-surface);
+      }
+
+      .about-frame::before,
+      .about-frame::after {
+        content: "";
+        position: absolute;
+        width: 44px;
+        height: 44px;
+        border-color: var(--accent-gold);
+      }
+
+      .about-frame::before {
+        top: -1px;
+        left: -1px;
+        border-top: 2px solid;
+        border-left: 2px solid;
+      }
+
+      .about-frame::after {
+        bottom: -1px;
+        right: -1px;
+        border-right: 2px solid;
+        border-bottom: 2px solid;
+      }
+
+      .about-frame img {
+        width: 100%;
+        height: 580px;
+        object-fit: cover;
+      }
+
+      .pull-quote {
+        margin: 2rem 0;
+        padding-left: 1.2rem;
+        border-left: 2px solid var(--accent-gold);
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-size: clamp(28px, 3.2vw, 42px);
+        line-height: 1.18;
+        color: var(--text-primary);
+      }
+
+      .portfolio {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .portfolio .section-intro {
+        width: var(--container);
+        margin: 0 auto 2rem;
+      }
+
+      .work-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 0.8rem;
+        width: min(1440px, calc(100% - 2rem));
+        margin: 0 auto;
+      }
+
+      .work-item {
+        position: relative;
+        overflow: hidden;
+        min-height: 320px;
+        background: var(--bg-secondary);
+      }
+
+      .work-item:nth-child(1),
+      .work-item:nth-child(4) {
+        grid-column: span 7;
+      }
+
+      .work-item:nth-child(2),
+      .work-item:nth-child(3) {
+        grid-column: span 5;
+      }
+
+      .work-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(100%) brightness(0.7);
+        transform: scale(1.04);
+        transition: filter 600ms cubic-bezier(0.2, 0.7, 0.1, 1), transform 600ms cubic-bezier(0.2, 0.7, 0.1, 1);
+      }
+
+      .work-overlay {
+        position: absolute;
+        inset: auto 0 0;
+        padding: 1.2rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 0.5rem;
+        background: linear-gradient(180deg, rgba(10, 10, 10, 0), rgba(10, 10, 10, 0.88));
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 600ms cubic-bezier(0.2, 0.7, 0.1, 1), transform 600ms cubic-bezier(0.2, 0.7, 0.1, 1);
       }
 
-      .s-head strong {
-        font-size: 0.96rem;
+      .work-overlay h3 {
+        font-size: clamp(32px, 3.5vw, 48px);
+        font-weight: 300;
       }
 
-      .close-chat {
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        border-radius: 8px;
-        background: transparent;
-        color: var(--text);
-        width: 28px;
-        height: 28px;
-        line-height: 1;
-        cursor: pointer;
+      .work-item:hover img,
+      .work-item:focus-within img {
+        filter: grayscale(0%) brightness(1);
+        transform: scale(1);
       }
 
-      .status {
-        color: #6ce89e;
-        font-size: 0.72rem;
+      .work-item:hover .work-overlay,
+      .work-item:focus-within .work-overlay {
+        opacity: 1;
+        transform: translateY(0);
       }
 
-      .quick {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.4rem;
-        margin-top: 0.55rem;
+      .contact {
+        background: var(--bg-secondary);
       }
 
-      .chip {
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        border-radius: 999px;
-        padding: 0.28rem 0.55rem;
-        color: #ccc1b2;
-        font-size: 0.68rem;
-        cursor: pointer;
+      .contact-wrap {
+        text-align: center;
       }
 
-      .chat-box {
-        margin-top: 0.6rem;
-        border: 1px solid rgba(255, 255, 255, 0.09);
-        border-radius: 12px;
-        padding: 0.6rem;
-        overflow: auto;
-        background: #0e0e0e;
+      .contact-wrap h2 {
+        max-width: 850px;
+        margin: 0 auto;
       }
 
-      .bubble {
-        max-width: 88%;
-        width: fit-content;
-        border-radius: 12px;
-        margin: 0.5rem 0;
-        padding: 0.5rem 0.64rem;
-        line-height: 1.5;
-        font-size: 0.84rem;
-        white-space: pre-line;
+      .mail-link {
+        display: inline-block;
+        margin: 2rem auto 2.6rem;
+        position: relative;
+        color: var(--text-primary);
+        font-size: clamp(22px, 3vw, 34px);
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
       }
 
-      .bubble.bot {
-        background: rgba(191, 154, 90, 0.18);
+      .mail-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -5px;
+        height: 1px;
+        background: var(--accent-gold);
+        clip-path: inset(0 100% 0 0);
+        transition: clip-path 450ms ease;
       }
 
-      .bubble.me {
-        background: #1c1b1b;
-        margin-left: auto;
+      .mail-link:hover::after,
+      .mail-link:focus-visible::after {
+        clip-path: inset(0 0 0 0);
       }
 
-      .composer {
-        margin-top: 0.65rem;
+      .contact-form {
+        width: min(840px, 100%);
+        margin: 0 auto;
         display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 0.5rem;
+        gap: 1.4rem;
       }
 
-      .composer input {
+      .field {
+        position: relative;
+      }
+
+      .field input,
+      .field textarea {
         width: 100%;
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        background: #0e0e0e;
-        color: var(--text);
-        padding: 0.62rem;
-        font-family: inherit;
-        font-size: 0.86rem;
-      }
-
-      .composer button {
         border: 0;
-        border-radius: 10px;
-        background: var(--gold);
-        color: #0b0b0b;
-        padding: 0.62rem 0.78rem;
-        font-weight: 600;
-        cursor: pointer;
+        border-bottom: 1px solid var(--border);
+        background: transparent;
+        color: var(--text-primary);
+        font-family: "DM Sans", sans-serif;
+        font-size: 18px;
+        font-weight: 300;
+        padding: 0.8rem 0;
+        outline: none;
       }
 
-      .chat-toggle {
-        position: fixed;
-        right: 16px;
-        bottom: 16px;
-        z-index: 210;
+      .field textarea {
+        min-height: 126px;
+        resize: vertical;
+      }
+
+      .field label {
+        position: absolute;
+        left: 0;
+        top: 0.9rem;
+        color: var(--text-secondary);
+        pointer-events: none;
+        transition: transform 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+      }
+
+      .field input:focus + label,
+      .field input:not(:placeholder-shown) + label,
+      .field textarea:focus + label,
+      .field textarea:not(:placeholder-shown) + label {
+        transform: translateY(-18px);
+        font-size: 12px;
+        color: var(--accent-gold);
+      }
+
+      .field.error input,
+      .field.error textarea {
+        border-bottom-color: var(--accent-gold);
+        box-shadow: 0 1px 0 0 var(--accent-gold);
+      }
+
+      .error-msg {
+        font-size: 12px;
+        color: var(--accent-gold-light);
+        text-align: left;
+        min-height: 1em;
+        margin-top: 0.4rem;
+      }
+
+      .footer {
+        border-top: 1px solid rgba(201, 168, 76, 0.2);
+        background: var(--bg-primary);
+        padding: 1.8rem 0 2.3rem;
+      }
+
+      .footer-wrap {
+        width: var(--container);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .footer-nav {
+        display: flex;
+        justify-content: center;
+        gap: 1.4rem;
+      }
+
+      .footer-social {
+        display: flex;
+        justify-content: flex-end;
+        gap: 0.8rem;
+      }
+
+      .social-link {
+        width: 36px;
+        height: 36px;
         border: 1px solid var(--border);
-        border-radius: 999px;
-        background: linear-gradient(120deg, rgba(191, 154, 90, 0.95), rgba(191, 154, 90, 0.78));
-        color: #090909;
-        font-size: 0.84rem;
-        font-weight: 700;
-        padding: 0.72rem 1rem;
-        cursor: pointer;
-        box-shadow: 0 16px 34px rgba(0, 0, 0, 0.45);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        color: var(--text-secondary);
       }
 
+      .social-link:hover,
+      .social-link:focus-visible {
+        border-color: var(--accent-gold);
+        color: var(--accent-gold);
+        transform: translateY(-2px);
+      }
+
+      .copyright {
+        width: var(--container);
+        margin: 1rem auto 0;
+        text-align: center;
+      }
+
+      .cursor-ring,
       .cursor-dot,
-      .cursor-ring {
+      .trail-dot {
         position: fixed;
         left: 0;
         top: 0;
         pointer-events: none;
-        opacity: 0;
-        z-index: 400;
-        transition: opacity 0.2s ease;
-      }
-
-      .cursor-dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: var(--gold-lite);
-        box-shadow: 0 0 18px rgba(191, 154, 90, 0.62);
-        transform: translate(-50%, -50%);
+        z-index: 9999;
       }
 
       .cursor-ring {
-        width: 34px;
-        height: 34px;
+        width: 32px;
+        height: 32px;
+        border: 1px solid var(--accent-gold);
         border-radius: 50%;
-        border: 1px solid rgba(212, 180, 120, 0.75);
-        background: radial-gradient(circle at center, rgba(212, 180, 120, 0.08), transparent 65%);
+        mix-blend-mode: difference;
+        transform: translate(-50%, -50%) scale(1);
+        transition: transform 180ms ease, background-color 220ms ease, opacity 220ms ease;
+      }
+
+      .cursor-dot {
+        width: 6px;
+        height: 6px;
+        background: var(--accent-gold);
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        transition: transform 150ms ease, opacity 150ms ease;
+      }
+
+      .trail-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: rgba(201, 168, 76, 0.85);
         transform: translate(-50%, -50%);
-        transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+        animation: trailFade 300ms linear forwards;
+      }
+
+      .cursor-hover .cursor-ring {
+        transform: translate(-50%, -50%) scale(1.75);
+        background: rgba(201, 168, 76, 0.12);
+      }
+
+      .cursor-hover .cursor-dot {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.1);
+      }
+
+      .cursor-click .cursor-ring,
+      .cursor-click .cursor-dot {
+        animation: cursorSpring 150ms ease;
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--accent-gold);
+        outline-offset: 4px;
+      }
+
+      .stagger-item {
+        transition-delay: var(--delay, 0ms);
+      }
+
+      @keyframes grainIn {
+        to {
+          opacity: 0.03;
+        }
+      }
+
+      @keyframes grainDrift {
+        from {
+          transform: translate(0, 0);
+        }
+        to {
+          transform: translate(-3%, -4%);
+        }
+      }
+
+      @keyframes revealUp {
+        from {
+          opacity: 0;
+          transform: translateY(28px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes ctaIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes lineDraw {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes mobileItemIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes trailFade {
+        from {
+          opacity: 0.9;
+          transform: translate(-50%, -50%) scale(1);
+        }
+        to {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(0.15);
+        }
+      }
+
+      @keyframes cursorSpring {
+        0% {
+          transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+          transform: translate(-50%, -50%) scale(0.78);
+        }
+        100% {
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .hero-grid,
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas:
+            "card1 card2"
+            "card3 card4"
+            "card5 card5";
+        }
+
+        .work-item:nth-child(1),
+        .work-item:nth-child(2),
+        .work-item:nth-child(3),
+        .work-item:nth-child(4) {
+          grid-column: span 6;
+        }
+
+        .footer-wrap {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .footer-social,
+        .footer-nav {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .nav-links {
+          display: none;
+        }
+
+        .menu-toggle {
+          display: inline-flex;
+          position: relative;
+        }
+
+        h1 {
+          font-size: clamp(44px, 13vw, 78px);
+        }
+
+        h2 {
+          font-size: clamp(32px, 11vw, 52px);
+        }
+
+        main section {
+          padding: 5rem 0;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr;
+          grid-template-areas: none;
+        }
+
+        .service-card {
+          grid-area: auto !important;
+        }
+
+        .work-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .work-item:nth-child(1),
+        .work-item:nth-child(2),
+        .work-item:nth-child(3),
+        .work-item:nth-child(4) {
+          grid-column: auto;
+        }
       }
 
       @media (pointer: fine) {
-        body.custom-cursor,
-        body.custom-cursor a,
-        body.custom-cursor button,
-        body.custom-cursor input,
-        body.custom-cursor textarea,
-        body.custom-cursor [role="button"] {
-          cursor: none;
+        html,
+        html * {
+          cursor: none !important;
         }
+      }
 
-        body.custom-cursor .cursor-dot,
-        body.custom-cursor .cursor-ring {
-          opacity: 1;
-        }
-
-        body.cursor-hover .cursor-ring {
-          width: 46px;
-          height: 46px;
-          border-color: rgba(212, 180, 120, 0.98);
+      @media (hover: none) {
+        .cursor-ring,
+        .cursor-dot,
+        .trail-dot {
+          display: none !important;
         }
       }
 
       @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation: none !important;
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+
+        .cursor-ring,
         .cursor-dot,
-        .cursor-ring {
-          display: none;
-        }
-      }
-
-      @keyframes slide {
-        from {
-          transform: translateX(0);
-        }
-        to {
-          transform: translateX(-50%);
-        }
-      }
-
-      @media (max-width: 1140px) {
-        .sidebar {
-          width: min(370px, calc(100vw - 14px));
-          right: 7px;
-          top: 7px;
-          height: calc(100vh - 14px);
-        }
-      }
-
-      @media (max-width: 960px) {
-        .hero {
-          grid-template-columns: 1fr;
-        }
-
-        .offers,
-        .team-grid,
-        .journey,
-        .testimonials {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .nav-links {
-          display: none;
-        }
-      }
-
-      @media (max-width: 640px) {
-        .offers,
-        .team-grid,
-        .journey,
-        .testimonials,
-        .stats {
-          grid-template-columns: 1fr;
-        }
-
-        .cta-band {
-          flex-direction: column;
-          align-items: flex-start;
+        .trail-dot {
+          display: none !important;
         }
       }
     </style>
   </head>
   <body>
-    <div class="layout">
-      <main class="main">
-        <nav class="nav">
-          <a class="brand" href="#top">ADRAK Digital</a>
-          <div class="nav-links">
-            <a href="#offers">Offers</a>
-            <a href="#team">Team</a>
-            <a href="#journey">Journey</a>
-            <a href="#ai">AI</a>
-            <a href="#testimonials">Proof</a>
-          </div>
-          <a class="nav-cta" href="https://wa.me/923339962158" target="_blank" rel="noopener noreferrer">Book Call</a>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a href="#top" class="brand" aria-label="ADRAK Atelier home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">ADRAK Atelier</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a class="nav-link" href="#services">Services</a>
+          <a class="nav-link" href="#story">Story</a>
+          <a class="nav-link" href="#work">Work</a>
+          <a class="nav-link" href="#contact">Contact</a>
         </nav>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+        </button>
+      </div>
+    </header>
 
-        <section class="hero" id="top">
-          <div>
-            <span class="pill">Islamabad Growth Agency</span>
-            <h1 class="h-title">Your Business. <em>Automated.</em> Growing.</h1>
-            <p class="sub">
-              We combine website strategy, content systems, paid ads and AI automation into one full-stack growth engine,
-              so your brand can generate demand and close better leads every month.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn-main" href="https://wa.me/923339962158" target="_blank" rel="noopener noreferrer">Start On WhatsApp</a>
-              <a class="btn btn-ghost" href="https://instagram.com/adrakdigital" target="_blank" rel="noopener noreferrer">See Instagram</a>
-            </div>
-            <div class="stats">
-              <div class="stat"><b>24/7</b><span>Lead handling</span></div>
-              <div class="stat"><b>3x</b><span>Weekly content cadence</span></div>
-              <div class="stat"><b>50%</b><span>Founding client discount</span></div>
-            </div>
-          </div>
-
-          <div class="mock">
-            <div class="bar">
-              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-              <span class="url">https://adrak.digital</span>
-            </div>
-            <div class="mock-body">
-              <h3 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem">Demand + Systems</h3>
-              <p class="mini">
-                Designed for founders who want one team that handles strategy, execution, and AI-enabled conversion instead of juggling vendors.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section class="ticker" aria-hidden="true">
-          <div class="ticker-track">
-            <span>Web Design</span><span>Meta Ads</span><span>AI Bot</span><span>Brand Strategy</span><span>Content Systems</span><span>Lead Funnels</span>
-            <span>Web Design</span><span>Meta Ads</span><span>AI Bot</span><span>Brand Strategy</span><span>Content Systems</span><span>Lead Funnels</span>
-          </div>
-        </section>
-
-        <section class="sec" id="offers">
-          <p class="sec-eye">What We Offer</p>
-          <h2>Not services. <em>Outcomes.</em></h2>
-          <div id="offersGrid" class="offers"></div>
-          <div id="discount" class="discount">Loading offer data...</div>
-        </section>
-
-        <section class="sec" id="team">
-          <p class="sec-eye">Team ADRAK</p>
-          <h2>People behind <em>your growth.</em></h2>
-          <div class="team-grid">
-            <article class="card"><h3>Daniyal Ahmad Khan</h3><p><strong>Founder &amp; CEO.</strong> Leads strategy, sales, client relationships, and content direction.</p></article>
-            <article class="card"><h3>Abdul Rehman</h3><p><strong>Co-Founder &amp; CTO.</strong> Drives technical architecture and product development across ADRAK systems.</p></article>
-            <article class="card"><h3>Hafsa Younis</h3><p><strong>Social Media Manager.</strong> Handles graphics, reels, and daily content pipeline execution.</p></article>
-            <article class="card"><h3>Saqib Ishaq</h3><p><strong>Lead Generation.</strong> Builds targeted prospecting and outreach workflows for quality inbound.</p></article>
-            <article class="card"><h3>Feroz-u-Din</h3><p><strong>AI Engineer.</strong> Builds and deploys AI bots and automation workflows for client operations.</p></article>
-          </div>
-        </section>
-
-        <section class="sec" id="journey">
-          <p class="sec-eye">Client Journey</p>
-          <h2>How we move from <em>chaos to scale.</em></h2>
-          <div class="journey">
-            <article class="card"><h3>Step 1 - Audit</h3><p>We analyze your current funnel, messaging, content and ad structure to map revenue leaks.</p></article>
-            <article class="card"><h3>Step 2 - Build</h3><p>Website blocks, content calendar, ads framework and AI bot are deployed in one system.</p></article>
-            <article class="card"><h3>Step 3 - Iterate</h3><p>Weekly optimization based on content performance, lead quality and conversion rate.</p></article>
-          </div>
-        </section>
-
-        <section class="sec" id="ai">
-          <p class="sec-eye">AI Layer</p>
-          <h2>Your leads answered in <em>real time.</em></h2>
-          <div class="team-grid">
-            <article class="card"><h3>24/7 Instant Replies</h3><p>AI assistant responds to FAQs, pricing intent and booking flow without delay.</p></article>
-            <article class="card"><h3>Sales-aware Conversations</h3><p>Bot follows ADRAK's consultation-first approach while handling language preference naturally.</p></article>
-            <article class="card"><h3>Groq Powered</h3><p>Fast inference through your Groq key and model pipeline, connected to your backend routes.</p></article>
-          </div>
-        </section>
-
-        <section class="sec" id="testimonials">
-          <p class="sec-eye">Proof</p>
-          <h2>Built for serious <em>operators.</em></h2>
-          <div class="testimonials">
-            <article class="card"><h3>Service Brand - Islamabad</h3><p>"Lead quality improved in under 30 days once pages and ads were aligned."</p></article>
-            <article class="card"><h3>Commerce Startup</h3><p>"Their content + performance setup made us predictable with weekly inbound."</p></article>
-            <article class="card"><h3>Coach Business</h3><p>"The AI bot handled DMs faster than our team and reduced drop-off massively."</p></article>
-          </div>
-        </section>
-
-        <section class="cta-band">
-          <p>Want ADRAK to audit your business and recommend the best package?</p>
-          <a class="btn btn-main" href="https://wa.me/923339962158" target="_blank" rel="noopener noreferrer">Get Free Strategy Call</a>
-        </section>
-
-        <footer>
-          ADRAK Digital - Islamabad, Pakistan | Founder: Daniyal Ahmad Khan (@preneurbhaya)
-        </footer>
-      </main>
-
-      <aside id="chatSidebar" class="sidebar" aria-label="AI Chatbot Sidebar">
-        <div class="s-head">
-          <strong>Aria - AI Assistant</strong>
-          <div style="display: flex; gap: 0.4rem; align-items: center">
-            <span id="status" class="status">Online</span>
-            <button id="closeChat" class="close-chat" type="button" aria-label="Close chat">x</button>
-          </div>
-        </div>
-        <div class="quick">
-          <button class="chip" type="button" data-q="Which package is best for a new business?">Best package?</button>
-          <button class="chip" type="button" data-q="I need website + ads. What do you suggest?">Website + ads</button>
-          <button class="chip" type="button" data-q="What is the discount right now?">Current discount</button>
-        </div>
-        <div id="messages" class="chat-box" role="log" aria-live="polite" aria-label="AI chat messages"></div>
-        <form id="chatForm" class="composer">
-          <input id="chatInput" name="message" placeholder="Ask about offers, pricing, AI bot..." required />
-          <button id="sendBtn" type="submit">Send</button>
-        </form>
-      </aside>
-
-      <button id="chatToggle" class="chat-toggle" type="button" aria-expanded="false" aria-controls="chatSidebar">
-        Open AI Assistant
-      </button>
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <nav aria-label="Mobile navigation">
+        <a class="mobile-link" href="#services">Services</a>
+        <a class="mobile-link" href="#story">Story</a>
+        <a class="mobile-link" href="#work">Work</a>
+        <a class="mobile-link" href="#contact">Contact</a>
+      </nav>
     </div>
 
-    <div id="cursorDot" class="cursor-dot" aria-hidden="true"></div>
-    <div id="cursorRing" class="cursor-ring" aria-hidden="true"></div>
+    <main>
+      <section class="hero" id="top">
+        <div class="hero-inner">
+          <div class="hero-grid">
+            <div>
+              <p class="label gold-label hero-label">✦ Freelance Services</p>
+              <h1>
+                <span class="hero-line-1">Creative That Prints</span>
+                <span class="hero-line-2"
+                  >Authority
+                  <svg viewBox="0 0 270 18" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M3 13C46 7 89 6 133 8C176 9 218 12 267 4" stroke="#C9A84C" stroke-width="2" fill="none" />
+                  </svg>
+                </span>
+              </h1>
+              <p class="hero-copy">
+                We design and engineer market-defining digital experiences for founders who want perception, power, and performance to move together from day one.
+              </p>
+              <div class="hero-actions">
+                <a class="btn-outline" href="#contact">Start Your Project</a>
+              </div>
+            </div>
+            <aside class="hero-side reveal" data-reveal="heading">
+              <p class="label">Current Availability</p>
+              <h3 style="font-size: clamp(34px, 4vw, 52px); margin-top: 0.6rem; font-weight: 300">2 Retainer Slots</h3>
+              <p>
+                High-intent branding, websites, campaigns, and offer systems for premium service businesses. Minimal noise. Maximum revenue clarity.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <div class="separator" aria-hidden="true"></div>
+
+      <section class="services" id="services">
+        <div class="container">
+          <div class="section-intro reveal" data-reveal="heading">
+            <p class="label">Services</p>
+            <h2>Precision-built systems for premium growth.</h2>
+          </div>
+          <div class="services-grid">
+            <article class="service-card reveal stagger-item" data-reveal="card" style="--delay: 0ms">
+              <span class="service-number">01</span>
+              <p class="label">Brand Strategy</p>
+              <h3>Positioning Architecture</h3>
+              <p>We define your category edge, narrative logic, and offer hierarchy so the right clients self-select before the call.</p>
+            </article>
+            <article class="service-card reveal stagger-item" data-reveal="card" style="--delay: 100ms">
+              <span class="service-number">02</span>
+              <p class="label">Web Experience</p>
+              <h3>Conversion-led Website</h3>
+              <p>Editorial-grade design and technical performance tuned to shorten buyer hesitation and raise average deal size.</p>
+            </article>
+            <article class="service-card reveal stagger-item" data-reveal="card" style="--delay: 200ms">
+              <span class="service-number">03</span>
+              <p class="label">Offer Design</p>
+              <h3>Signature Offer System</h3>
+              <p>Sharper packaging, tighter messaging, and strategic anchors that make your price feel obvious instead of negotiable.</p>
+            </article>
+            <article class="service-card reveal stagger-item" data-reveal="card" style="--delay: 300ms">
+              <span class="service-number">04</span>
+              <p class="label">Campaigns</p>
+              <h3>Demand Generation</h3>
+              <p>Launch campaigns with a luxury brand tone and measurable performance loops across paid and organic channels.</p>
+            </article>
+            <article class="service-card reveal stagger-item" data-reveal="card" style="--delay: 400ms">
+              <span class="service-number">05</span>
+              <p class="label">Creative Direction</p>
+              <h3>End-to-End Execution Partner</h3>
+              <p>
+                One senior team that handles strategy, visual language, copy structure, and optimization so every brand touchpoint compounds authority.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="story">
+        <div class="container about-grid">
+          <div class="about-frame reveal" data-reveal="image">
+            <img
+              src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80"
+              alt="Creative director refining campaign strategy in a luxury studio"
+              loading="lazy"
+              width="1200"
+              height="1500"
+            />
+          </div>
+          <div class="reveal" data-reveal="heading">
+            <p class="label">Story</p>
+            <h2>Built for brands that cannot afford average.</h2>
+            <p style="margin-top: 1.2rem">
+              ADRAK Atelier started with one principle: premium brands need premium digital standards. We combine strategic restraint with ruthless execution to produce work that looks expensive and performs even better.
+            </p>
+            <blockquote class="pull-quote">"Luxury is not decoration. It is clarity with consequence."</blockquote>
+            <p>
+              Every engagement is tailored, measured, and intentionally selective. We do fewer projects so each one becomes a category statement.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="portfolio" id="work">
+        <div class="section-intro reveal" data-reveal="heading">
+          <p class="label">Selected Work</p>
+          <h2>Visual systems that move markets.</h2>
+        </div>
+        <div class="work-grid">
+          <article class="work-item reveal" data-reveal="image">
+            <img
+              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=80"
+              alt="Luxury consulting brand campaign layout"
+              loading="lazy"
+              width="1800"
+              height="1200"
+            />
+            <div class="work-overlay">
+              <h3>Velvet Advisory</h3>
+              <span aria-hidden="true">&#8594;</span>
+            </div>
+          </article>
+          <article class="work-item reveal" data-reveal="image">
+            <img
+              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1600&q=80"
+              alt="Premium SaaS homepage redesign"
+              loading="lazy"
+              width="1600"
+              height="1200"
+            />
+            <div class="work-overlay">
+              <h3>Northline SaaS</h3>
+              <span aria-hidden="true">&#8594;</span>
+            </div>
+          </article>
+          <article class="work-item reveal" data-reveal="image">
+            <img
+              src="https://images.unsplash.com/photo-1553028826-f4804a6dba3b?auto=format&fit=crop&w=1600&q=80"
+              alt="High-end fitness brand web and social campaign"
+              loading="lazy"
+              width="1600"
+              height="1200"
+            />
+            <div class="work-overlay">
+              <h3>Iron Summit</h3>
+              <span aria-hidden="true">&#8594;</span>
+            </div>
+          </article>
+          <article class="work-item reveal" data-reveal="image">
+            <img
+              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1800&q=80"
+              alt="Executive coaching funnel and content ecosystem"
+              loading="lazy"
+              width="1800"
+              height="1200"
+            />
+            <div class="work-overlay">
+              <h3>Monarch Coaching</h3>
+              <span aria-hidden="true">&#8594;</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="container contact-wrap">
+          <p class="label">Contact</p>
+          <h2>Let us build the digital presence your pricing deserves.</h2>
+          <a class="mail-link" href="mailto:hello@adrak.digital">hello@adrak.digital</a>
+
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="field">
+              <input id="name" name="name" type="text" placeholder=" " required minlength="2" />
+              <label for="name">Your Name</label>
+              <p class="error-msg" id="nameError"></p>
+            </div>
+            <div class="field">
+              <input id="email" name="email" type="email" placeholder=" " required />
+              <label for="email">Email Address</label>
+              <p class="error-msg" id="emailError"></p>
+            </div>
+            <div class="field">
+              <textarea id="message" name="message" placeholder=" " required minlength="20"></textarea>
+              <label for="message">Project Brief</label>
+              <p class="error-msg" id="messageError"></p>
+            </div>
+            <div style="display: flex; justify-content: center">
+              <button class="btn-outline" type="submit">Send Inquiry</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-wrap">
+        <a href="#top" class="brand" aria-label="Back to top">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">ADRAK Atelier</span>
+        </a>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a class="nav-link" href="#services">Services</a>
+          <a class="nav-link" href="#story">Story</a>
+          <a class="nav-link" href="#work">Work</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </nav>
+        <div class="footer-social">
+          <a class="social-link" href="https://instagram.com/adrakdigital" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+              <circle cx="12" cy="12" r="4.2"></circle>
+              <circle cx="17.5" cy="6.5" r="1"></circle>
+            </svg>
+          </a>
+          <a class="social-link" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="M6.5 9.5V19"></path>
+              <path d="M6.5 6.5a1 1 0 0 0 0-2a1 1 0 0 0 0 2z"></path>
+              <path d="M11.5 19V12.8c0-2 1.3-3.3 3-3.3s3 1.3 3 3.3V19"></path>
+            </svg>
+          </a>
+          <a class="social-link" href="https://wa.me/923339962158" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="M20 12a8 8 0 0 1-11.7 7l-4.3 1l1.1-4.1A8 8 0 1 1 20 12z"></path>
+              <path d="M9.5 8.8c0 2.8 2.9 5.7 5.7 5.7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <p class="copyright label">© <span id="year"></span> ADRAK Atelier. All rights reserved.</p>
+    </footer>
+
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
     <script>
-      const offersGrid = document.getElementById("offersGrid");
-      const discount = document.getElementById("discount");
-      const messages = document.getElementById("messages");
-      const statusEl = document.getElementById("status");
-      const chatForm = document.getElementById("chatForm");
-      const chatInput = document.getElementById("chatInput");
-      const sendBtn = document.getElementById("sendBtn");
-      const chips = document.querySelectorAll(".chip");
-      const sidebar = document.querySelector(".sidebar");
-      const chatToggle = document.getElementById("chatToggle");
-      const closeChat = document.getElementById("closeChat");
-      const cursorDot = document.getElementById("cursorDot");
-      const cursorRing = document.getElementById("cursorRing");
-      const trackedWhatsAppLinks = document.querySelectorAll('a[href*="wa.me/"]');
+      const root = document.documentElement;
+      const body = document.body;
+      const navLinks = [...document.querySelectorAll(".nav-link")];
+      const sectionEls = [...document.querySelectorAll("main section[id]")];
+      const revealEls = [...document.querySelectorAll(".reveal")];
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const mobileLinks = [...document.querySelectorAll(".mobile-link")];
+      const form = document.getElementById("contactForm");
+      const year = document.getElementById("year");
 
-      const state = {
-        open: false,
-        messages: [
-          {
-            role: "assistant",
-            content: "Assalam-o-alaikum. I am Aria from ADRAK. Tell me your niche and current digital challenge, and I will suggest the best growth plan."
-          }
-        ]
-      };
+      year.textContent = new Date().getFullYear();
 
-      function addBubble(role, text) {
-        const node = document.createElement("div");
-        node.className = `bubble ${role === "user" ? "me" : "bot"}`;
-        node.textContent = text;
-        messages.appendChild(node);
-        messages.scrollTop = messages.scrollHeight;
+      function setActiveLink(id) {
+        navLinks.forEach((link) => {
+          const isActive = link.getAttribute("href") === `#${id}`;
+          link.classList.toggle("active", isActive);
+        });
       }
 
-      function trackEvent(name, params = {}) {
-        try {
-          if (typeof window.gtag === "function") {
-            window.gtag("event", name, params);
-          }
+      const sectionObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveLink(entry.target.id);
+            }
+          });
+        },
+        { threshold: 0.45 }
+      );
+      sectionEls.forEach((section) => sectionObserver.observe(section));
 
-          if (typeof window.plausible === "function") {
-            window.plausible(name, { props: params });
-          }
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.16 }
+      );
+      revealEls.forEach((el) => revealObserver.observe(el));
 
-          window.dispatchEvent(
-            new CustomEvent("adrak:analytics", {
-              detail: { name, params, ts: Date.now() }
-            })
-          );
-        } catch (_) {
-          // Keep analytics non-blocking for UX.
+      function toggleMenu(next) {
+        const open = typeof next === "boolean" ? next : !body.classList.contains("menu-open");
+        body.classList.toggle("menu-open", open);
+        menuToggle.setAttribute("aria-expanded", String(open));
+        mobileMenu.setAttribute("aria-hidden", String(!open));
+      }
+
+      menuToggle.addEventListener("click", () => toggleMenu());
+      mobileLinks.forEach((link) => link.addEventListener("click", () => toggleMenu(false)));
+      window.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && body.classList.contains("menu-open")) {
+          toggleMenu(false);
         }
+      });
+
+      function setFieldError(fieldId, message) {
+        const input = document.getElementById(fieldId);
+        const wrapper = input.closest(".field");
+        const errorEl = document.getElementById(`${fieldId}Error`);
+        if (!message) {
+          wrapper.classList.remove("error");
+          errorEl.textContent = "";
+          return true;
+        }
+        wrapper.classList.add("error");
+        errorEl.textContent = message;
+        return false;
       }
 
-      function initCustomCursor() {
-        const finePointer = window.matchMedia("(pointer: fine)").matches;
-        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        if (!finePointer || reducedMotion) {
+      function validateForm() {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+        const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+        const checks = [
+          setFieldError("name", name.length < 2 ? "Name should be at least 2 characters." : ""),
+          setFieldError("email", emailOk ? "" : "Enter a valid email address."),
+          setFieldError("message", message.length < 20 ? "Project brief should be at least 20 characters." : "")
+        ];
+
+        return checks.every(Boolean);
+      }
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!validateForm()) {
           return;
         }
 
-        document.body.classList.add("custom-cursor");
+        form.reset();
+        alert("Thank you. Your inquiry has been captured. We'll get back to you shortly.");
+      });
 
-        let x = window.innerWidth / 2;
-        let y = window.innerHeight / 2;
-        let rx = x;
-        let ry = y;
+      const cursorRing = document.getElementById("cursorRing");
+      const cursorDot = document.getElementById("cursorDot");
+      const canUseCursor = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-        function animate() {
-          rx += (x - rx) * 0.16;
-          ry += (y - ry) * 0.16;
-          cursorDot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
-          cursorRing.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
-          requestAnimationFrame(animate);
+      if (canUseCursor && !reducedMotion) {
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let ringX = mouseX;
+        let ringY = mouseY;
+        let lastTrail = performance.now();
+
+        function animateCursor() {
+          ringX += (mouseX - ringX) * 0.08;
+          ringY += (mouseY - ringY) * 0.08;
+          cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+          cursorRing.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
+          requestAnimationFrame(animateCursor);
+        }
+
+        function spawnTrail(x, y) {
+          const dot = document.createElement("span");
+          dot.className = "trail-dot";
+          dot.style.left = `${x}px`;
+          dot.style.top = `${y}px`;
+          body.appendChild(dot);
+          setTimeout(() => dot.remove(), 300);
         }
 
         window.addEventListener("mousemove", (event) => {
-          x = event.clientX;
-          y = event.clientY;
+          mouseX = event.clientX;
+          mouseY = event.clientY;
 
-          const interactive = event.target.closest("a, button, input, textarea, [role='button'], .chip, .btn, .nav-cta");
-          document.body.classList.toggle("cursor-hover", Boolean(interactive));
-        });
+          const target = event.target.closest("a, button, input, textarea, label");
+          body.classList.toggle("cursor-hover", Boolean(target));
 
-        window.addEventListener("mousedown", () => document.body.classList.add("cursor-hover"));
-        window.addEventListener("mouseup", () => document.body.classList.remove("cursor-hover"));
-        window.addEventListener("blur", () => document.body.classList.remove("cursor-hover"));
-
-        animate();
-      }
-
-      function setChatOpen(nextOpen) {
-        const wasOpen = state.open;
-        state.open = nextOpen;
-        sidebar.classList.toggle("open", nextOpen);
-        chatToggle.setAttribute("aria-expanded", String(nextOpen));
-        chatToggle.textContent = nextOpen ? "Close AI Assistant" : "Open AI Assistant";
-        if (!wasOpen && nextOpen) {
-          trackEvent("chat_open", { source: "chat_toggle" });
-        }
-        if (nextOpen) {
-          setTimeout(() => chatInput.focus(), 10);
-        }
-      }
-
-      function renderOffers(offers) {
-        offersGrid.innerHTML = offers
-          .map(
-            (offer) => `
-            <article class="offer">
-              <span class="tag">${offer.tag}</span>
-              <h3>${offer.icon} ${offer.name}</h3>
-              <p>${offer.desc}</p>
-              <div class="price">${offer.priceDisplay || "Custom"}</div>
-            </article>
-          `
-          )
-          .join("");
-      }
-
-      async function loadOffers() {
-        const res = await fetch("/api/offers");
-        if (!res.ok) {
-          throw new Error("Could not load offers");
-        }
-        const data = await res.json();
-        renderOffers(data.offers || []);
-        if (data.discount) {
-          discount.innerHTML = `<strong>${data.discount.label}</strong><br>Use code <b>${data.discount.code}</b> for first-month savings.`;
-        } else {
-          discount.textContent = "Founding discount details are available in chat.";
-        }
-      }
-
-      async function askBot(content) {
-        const query = content.trim();
-        if (!query) {
-          return;
-        }
-
-        trackEvent("chat_send", {
-          chars: query.length,
-          words: query.split(/\s+/).filter(Boolean).length
-        });
-
-        addBubble("user", query);
-        state.messages.push({ role: "user", content: query });
-        chatInput.value = "";
-        statusEl.textContent = "Typing...";
-        sendBtn.disabled = true;
-
-        try {
-          const res = await fetch("/api/chat", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ messages: state.messages })
-          });
-          const data = await res.json();
-          if (!res.ok) {
-            throw new Error(data.error || "Chat failed");
+          const now = performance.now();
+          const speed = Math.hypot(event.movementX, event.movementY);
+          if (speed > 18 && now - lastTrail > 22) {
+            for (let i = 0; i < 5; i += 1) {
+              spawnTrail(mouseX - i * 3, mouseY - i * 3);
+            }
+            lastTrail = now;
           }
+        });
 
-          const reply = data.reply || "I could not generate a response right now.";
-          state.messages.push({ role: "assistant", content: reply });
-          addBubble("assistant", reply);
-        } catch (err) {
-          addBubble("assistant", `Error: ${err.message}`);
-        } finally {
-          sendBtn.disabled = false;
-          statusEl.textContent = "Online";
-        }
+        window.addEventListener("mousedown", () => {
+          body.classList.add("cursor-click");
+          setTimeout(() => body.classList.remove("cursor-click"), 150);
+        });
+
+        animateCursor();
       }
 
-      chips.forEach((chip) => {
-        chip.addEventListener("click", () => askBot(chip.dataset.q || ""));
-      });
-
-      chatToggle.addEventListener("click", () => setChatOpen(!state.open));
-      closeChat.addEventListener("click", () => setChatOpen(false));
-
-      trackedWhatsAppLinks.forEach((link) => {
+      mobileLinks.forEach((link) => {
         link.addEventListener("click", () => {
-          const label = link.textContent ? link.textContent.trim() : "whatsapp_link";
-          trackEvent("cta_whatsapp_click", { label });
+          const targetId = link.getAttribute("href").replace("#", "");
+          setActiveLink(targetId);
         });
-      });
-      window.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && state.open) {
-          setChatOpen(false);
-        }
-      });
-
-      chatForm.addEventListener("submit", async (event) => {
-        event.preventDefault();
-        await askBot(chatInput.value);
-      });
-
-      addBubble("assistant", state.messages[0].content);
-      setChatOpen(false);
-      initCustomCursor();
-      loadOffers().catch(() => {
-        offersGrid.innerHTML = "";
-        discount.textContent = "Could not load offers right now. Use chat for details.";
       });
     </script>
   </body>
