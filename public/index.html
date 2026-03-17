@@ -1050,6 +1050,14 @@
         font-family: "Manrope", sans-serif;
       }
 
+      .honeypot-wrap {
+        position: absolute;
+        left: -9999px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+
       .lead-form button {
         border: 1px solid var(--border);
         background: rgba(0, 240, 255, 0.12);
@@ -1913,8 +1921,20 @@
       <form class="lead-form" id="leadForm">
         <label for="leadName">Lead Capture</label>
         <input id="leadName" type="text" name="name" placeholder="Name" required />
-        <input id="leadPhone" type="text" name="phone" placeholder="Phone" required />
+        <input
+          id="leadPhone"
+          type="tel"
+          name="phone"
+          placeholder="Phone"
+          inputmode="tel"
+          pattern="^(\\+92|92|0)?3[0-9]{9}$"
+          required
+        />
         <input id="leadNiche" type="text" name="niche" placeholder="Business niche" required />
+        <div class="honeypot-wrap" aria-hidden="true">
+          <label for="leadWebsite">Website</label>
+          <input id="leadWebsite" type="text" name="website" tabindex="-1" autocomplete="off" />
+        </div>
         <button type="submit">Send to WhatsApp or CRM</button>
       </form>
 
@@ -1960,6 +1980,7 @@
       const leadName = document.querySelector('#leadName');
       const leadPhone = document.querySelector('#leadPhone');
       const leadNiche = document.querySelector('#leadNiche');
+      const leadWebsite = document.querySelector('#leadWebsite');
 
       const dealState = {
         messages: [
@@ -2125,15 +2146,24 @@
         leadForm.addEventListener('submit', async (event) => {
           event.preventDefault();
 
+          const phoneRegex = /^(\+92|92|0)?3\d{9}$/;
+          const cleanPhone = leadPhone.value.replace(/\s+/g, '');
+
           const payload = {
             name: leadName.value.trim(),
-            phone: leadPhone.value.trim(),
+            phone: cleanPhone,
             niche: leadNiche.value.trim(),
-            source: 'website-sidebar'
+            source: 'website-sidebar',
+            website: (leadWebsite && leadWebsite.value ? leadWebsite.value : '').trim()
           };
 
           if (!payload.name || !payload.phone || !payload.niche) {
             appendDealMessage('bot', 'Please fill name, phone, and business niche before submitting lead.');
+            return;
+          }
+
+          if (!phoneRegex.test(payload.phone)) {
+            appendDealMessage('bot', 'Please use a valid Pakistan mobile number (03XXXXXXXXX or +923XXXXXXXXX).');
             return;
           }
 

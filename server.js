@@ -8,6 +8,43 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+const leadRateWindowMs = 15 * 60 * 1000;
+const leadRateMaxRequests = 5;
+const leadRateByIp = new Map();
+
+function getClientIp(req) {
+  const forwarded = req.headers['x-forwarded-for'];
+  if (typeof forwarded === 'string' && forwarded.trim()) {
+    return forwarded.split(',')[0].trim();
+  }
+  return req.ip || req.socket?.remoteAddress || 'unknown';
+}
+
+function isRateLimited(ip) {
+  const now = Date.now();
+  const bucket = leadRateByIp.get(ip) || [];
+  const fresh = bucket.filter((ts) => now - ts < leadRateWindowMs);
+
+  if (fresh.length >= leadRateMaxRequests) {
+    leadRateByIp.set(ip, fresh);
+    const retryAfterMs = leadRateWindowMs - (now - fresh[0]);
+    return { limited: true, retryAfterMs };
+  }
+
+  fresh.push(now);
+  leadRateByIp.set(ip, fresh);
+  return { limited: false, retryAfterMs: 0 };
+}
+
+function normalizePhone(phone) {
+  return String(phone || '').replace(/[^\d+]/g, '');
+}
+
+function isValidPkPhone(phone) {
+  const normalized = normalizePhone(phone);
+  return /^(\+92|92|0)?3\d{9}$/.test(normalized);
+}
+
 const KB = {
   company: {
     whatsapp: '923339962158',
@@ -350,17 +387,36 @@ app.post('/api/chat', async (req, res) => {
 app.get('/api/offers', (req, res) => res.json({ offers: KB.offers, discount: KB.discount }));
 
 app.post('/api/leads', async (req, res) => {
-  const { name, phone, niche, source } = req.body || {};
+  const { name, phone, niche, source, website } = req.body || {};
+  const ip = getClientIp(req);
+
+  if (String(website || '').trim() !== '') {
+    return res.status(200).json({ ok: true, ignored: true });
+  }
+
+  const rate = isRateLimited(ip);
+  if (rate.limited) {
+    res.set('Retry-After', String(Math.ceil(rate.retryAfterMs / 1000)));
+    return res.status(429).json({
+      error: 'Too many submissions. Please wait a few minutes and try again.',
+      retryAfterMs: rate.retryAfterMs
+    });
+  }
 
   if (!name || !phone || !niche) {
     return res.status(400).json({ error: 'name, phone, and niche are required' });
   }
 
+  if (!isValidPkPhone(phone)) {
+    return res.status(400).json({ error: 'Please enter a valid Pakistan mobile number.' });
+  }
+
   const lead = {
     name: String(name).trim(),
-    phone: String(phone).trim(),
+    phone: normalizePhone(phone),
     niche: String(niche).trim(),
     source: String(source || 'website-sidebar').trim(),
+    ip,
     createdAt: new Date().toISOString()
   };
 
